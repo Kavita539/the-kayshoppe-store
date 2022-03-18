@@ -1,23 +1,13 @@
-function App() {
+import {Routes, Route} from "react-router-dom"
+import {Home, Products, Cart, Wishlist} from "./pages"
 
-  import axios from "axios";
-  import { Route, Routes } from "react-router-dom";
-  import { Cart, Home, Products, Wishlist } from "./pages";
-  import { Footer, Header } from "./components";
-
-  const App = () =>{
-    return(
-      <Header />
+export default function App() {
+  return (
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/" element={<Home />}/>
+        <Route path="/products" element={<Products />}/>
+        <Route path="/cart" element={<Cart />}/>
+        <Route path="/wishlist" element={<Wishlist />}/>
       </Routes>
-      <Footer />
-    );
-  };
-};
-
-export default App;
-export { App };
+  );
+}
