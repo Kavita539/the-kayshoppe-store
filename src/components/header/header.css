@@ -26,6 +26,16 @@
     display: block;
 }
 
+.mid-navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-navbar{
+    align-items: center;
+}
+
 /* search-bar */
 .nav-search-bar {
     width: 30rem;
