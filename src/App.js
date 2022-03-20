@@ -1,4 +1,5 @@
 import {Routes, Route} from "react-router-dom"
+import { Header } from "./components";
 import {Home, Products, Cart, Wishlist} from "./pages"
 
 export default function App() {
@@ -9,5 +10,6 @@ export default function App() {
         <Route path="/cart" element={<Cart />}/>
         <Route path="/wishlist" element={<Wishlist />}/>
       </Routes>
+      // <h1>Hello</h1>
   );
 }

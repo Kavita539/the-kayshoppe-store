@@ -1,10 +1,10 @@
 import "./categoryCard.css";
 
-const CategoryCard = () => {
+const CategoryCard = ({categoryImage, category}) => {
     return(
-        <div class="category card text-card">
-                        <div class="overlay-container">
-                            <h2 class="overlay-text text-bolder">{category}</h2>
+        <div className="category card text-card">
+                        <div className="overlay-container">
+                            <h2 className="overlay-text text-bolder">{category}</h2>
                         </div>
                         <img src={categoryImage} alt={category} />
                     </div>

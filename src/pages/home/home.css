@@ -1,5 +1,3 @@
-@import url(/stylesheets/base.css);
-@import url(/stylesheets/utility.css);
 
 /* banner content */
 .banner {
@@ -8,9 +6,12 @@
     justify-content: center;
     align-items: center;
     margin-bottom: var(--xl-space);
-    position: relative;
-    background-image: url(/assets/banner-bg-image.jpg);
+    
+}
+
+.bannerimage {
     background-repeat: no-repeat;
+    position: relative;
     background-position: top center;
     background-size: cover;
 }
@@ -68,4 +69,19 @@
 
 .section-heading {
     font-size: 2.5rem;
+}
+
+/* featured products */
+.featured-products-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--lg-space);
+}
+
+.featured-products {
+    width: 90%;
+    margin: auto;
+    padding: var(--xl-space);
 }

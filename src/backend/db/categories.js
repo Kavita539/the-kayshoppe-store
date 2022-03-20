@@ -24,6 +24,6 @@ export const categories = [
   {
     _id: uuid(),
     categoryName: "Equipments",
-    image: "/assets/category-gymequipments.jpg",
+    image: "/assets/category-gymequipment.jpg",
   },
 ];
