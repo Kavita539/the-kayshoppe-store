@@ -1,6 +1,6 @@
 import "./home.css";
 import { CategoryCard, Header, Footer, HorizontalCard } from "../../components";
-import { featuredProducts } from "../../backend/db/products";
+// import { featuredProducts } from "../../backend/db/products";
 
 const Home = ()=>{
     return(
@@ -28,21 +28,7 @@ const Home = ()=>{
             
 
 
-            <section className="text-center">
-                <h1 className="section-heading">Featured Products</h1>
-
-                <div className="featured-products-area featured-products">
-                {featuredProducts.map(({ title, imageDescription, featuredProductDescription, price, discountedPrice, image }) => (
-            <HorizontalCard
-              title={title}
-              imageDescription={imageDescription}
-              featuredProductDescription={featuredProductDescription}
-              price={price}
-              image={image}
-            />
-          ))}
-                </div>
-            </section>
+            <HorizontalCard />
             <Footer />
         </>
     );

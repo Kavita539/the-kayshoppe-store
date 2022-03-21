@@ -31,6 +31,7 @@ export const products = [
 
 export const featuredProducts = [
   {
+    _id: uuid(),
     title: "Men slim Fit Tshirt",
     imageDescription: "T-shirt",
     featuredProductDescription: "A premium quality Fit T-shirt. Available in different colors.",
@@ -38,6 +39,7 @@ export const featuredProducts = [
     image: "",
   },
   {
+    _id: uuid(),
     title: "Blue Mesh Shoes",
     imageDescription: "shoes",
     featuredProductDescription: "A premium quality shoes from nike. Classy yet affordable",
