@@ -7,7 +7,7 @@ const Home = ()=>{
         <>
         <Header/>
         {/* Banner section for the e-commerce */}
-          <div className="banner flex-center">
+          <div className="banner flex-center" style={{ backgroundImage: `url(https://www.pngmagic.com/product_images/ecommerce-website-banner.jpg)` }}>
               
                 <div className="banner-content text-center">
                     <h2 className="banner-heading"> <span className="banner-initials custom-color">K</span>ayy<span

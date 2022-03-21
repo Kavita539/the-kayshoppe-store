@@ -1,0 +1,21 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+  }
+  
+  :root {
+      /* colors */
+      --banner-bg-color: rgba(255, 255, 255, 0.301);
+      --banner-content-bg-color: hsl(0 0% 100% / 0.85);
+      --bg-color: #fafafa;
+      --nav-logo-custom-color: rgba(0, 0, 0, 0.6);
+    
+    
+      /* spacing */
+      --sm-space: 0.5rem;
+      --md-space: 1rem;
+      --lg-space: 1.5rem;
+      --xl-space: 2rem;
+      --xxl-space: 2.5rem;
+      --xxxl-space: 3rem;
+    }
