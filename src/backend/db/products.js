@@ -28,3 +28,22 @@ export const products = [
     categoryName: "fiction",
   },
 ];
+
+export const featuredProducts = [
+  {
+    _id: uuid(),
+    title: "Men slim Fit Tshirt",
+    imageDescription: "T-shirt",
+    featuredProductDescription: "A premium quality Fit T-shirt. Available in different colors.",
+    price: "850",
+    image: "",
+  },
+  {
+    _id: uuid(),
+    title: "Blue Mesh Shoes",
+    imageDescription: "shoes",
+    featuredProductDescription: "A premium quality shoes from nike. Classy yet affordable",
+    price: "2799",
+    image: "",
+  }
+];

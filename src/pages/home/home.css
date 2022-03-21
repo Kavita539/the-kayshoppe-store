@@ -1,0 +1,87 @@
+@import url(../../stylesheets/base.css);
+/* banner content */
+.banner {
+    height: calc(100vh - 5.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--xl-space);
+    
+}
+
+.bannerimage {
+    background-repeat: no-repeat;
+    position: relative;
+    background-position: top center;
+    background-size: cover;
+}
+  
+.banner-content {
+    padding: var(--xl-space);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--md-space);
+    position: absolute;
+    background-color: var(--banner-content-bg-color);
+}
+
+@supports (backdrop-filter: blur(3px)) {
+    .banner-content {
+      background-color: var(--banner-bg-color);
+      backdrop-filter: blur(3px);
+    }
+}
+
+/* customized CL btn */
+.btn{
+    border-radius: 0;
+}
+
+/* banner content */
+.banner-heading {
+    font-size: 3rem;
+    margin: auto;
+    color: var(--primary-color);
+    word-spacing: 20px;
+    background-color: transparent;
+}
+
+.banner-initials {
+    font-size: 3rem;
+}
+  
+.banner-sub-heading {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    background-color: transparent;
+}
+  
+.banner-cta {
+    display: flex;
+    column-gap: var(--md-space);
+    row-gap: var(--md-space);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.section-heading {
+    font-size: 2.5rem;
+}
+
+/* featured products */
+.featured-products-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--lg-space);
+}
+
+.featured-products {
+    width: 90%;
+    margin: auto;
+    padding: var(--xl-space);
+}
