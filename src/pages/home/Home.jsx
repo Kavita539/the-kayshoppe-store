@@ -1,6 +1,6 @@
 import "./home.css";
 import { CategoryCard, Header, Footer, HorizontalCard } from "../../components";
-// import { featuredProducts } from "../../backend/db/products";
+import { Link } from "react-router-dom";
 
 const Home = ()=>{
     return(
@@ -14,7 +14,7 @@ const Home = ()=>{
                             className="banner-initials custom-color">S</span>hoppe</h2>
                     <p className="banner-sub-heading custom-color">ITS KAYY TO SPLURGE!</p>
                     <div className="banner-cta">
-                        <a href="/pages/product-listing-page/product-listing.html" className="btn btn-primary">Shop now</a>
+                        <Link to="/products" className="btn btn-primary">Shop now</Link>
                         <a href="#categories" className="btn outline-btn-primary">Categories</a>
                     </div>
                 </div>
@@ -24,10 +24,6 @@ const Home = ()=>{
 
             <CategoryCard/>
         
-
-            
-
-
             <HorizontalCard />
             <Footer />
         </>

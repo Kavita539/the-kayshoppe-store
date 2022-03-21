@@ -1,4 +1,5 @@
 import "./header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return(
@@ -7,11 +8,11 @@ const Header = () => {
                     <button id="menu-icon-button" className="burger-menu-button navlist-link-item">
                         <i className="fas fa-bars"></i>
                     </button>
-                    <a className="link-no-style" href="./">
+                    <Link to="/" className="link-no-style" >
                         <div className="nav-logo-title"> <span className="text-xl custom-color">K</span>ayy<span
                                 className="text-xl custom-color">S</span>hoppe</div>
                         <div className="nav-logo-tagline custom-color">ITS KAYY TO SPLURGE!</div>
-                    </a>
+                    </Link>
                 </div>
                 <div className="mid-navbar">
                     <div className="nav-search-bar">
@@ -21,16 +22,16 @@ const Header = () => {
                 </div>
                 <ul className="right-navbar">
                     <li>
-                        <a className="navlist-link-item" href="/pages/wishlist-page/wishlist-page.html"> <i
-                                className="fas fa-heart fa-md"></i></a>
+                        <Link to="/wishlist" className="navlist-link-item"> <i
+                                className="fas fa-heart fa-md"></i></Link>
                     </li>
                     <li>
-                        <a className="navlist-link-item" href="/pages/cart-management-page/cart-management.html"> <i
-                                className="fas fa-shopping-cart"></i></a>
+                        <Link to="/cart" className="navlist-link-item"> <i
+                                className="fas fa-shopping-cart"></i></Link>
                     </li>
                     <li>
-                        <a className="navlist-link-item" href="/pages/authentication-pages/signin-page.html"> <button
-                                className="btn btn-primary">Login</button></a>
+                        <Link to="/login" className="navlist-link-item"> <button
+                                className="btn btn-primary">Login</button></Link>
                     </li>
                 </ul>
             </nav>
