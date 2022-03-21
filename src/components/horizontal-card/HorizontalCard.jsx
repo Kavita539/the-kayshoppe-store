@@ -10,7 +10,6 @@ const HorizontalCard = () => {
             const res = await axios.get("/api/products");
             if (res.status === 200) {
               setFeaturedProducts(res.data.featuredProducts);
-            //   console.log(hello)
             }
           } catch (err) {
            console.log(error);

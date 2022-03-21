@@ -10,6 +10,5 @@ export default function App() {
         <Route path="/cart" element={<Cart />}/>
         <Route path="/wishlist" element={<Wishlist />}/>
       </Routes>
-      // <h1>Hello</h1>
   );
 }
