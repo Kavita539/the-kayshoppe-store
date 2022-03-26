@@ -1,0 +1,16 @@
+.wishlist-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--lg-space);
+    padding: var(--xl-space);
+}
+
+.wishlist-product-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--lg-space);
+    flex-wrap: wrap;
+}

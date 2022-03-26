@@ -1,0 +1,23 @@
+/* card customization */
+.card-info-container {
+    padding: var(--sm-space);
+}
+
+.card-heart-logo {
+    padding-top: 10px;
+}
+
+.rating {
+    background-color: var(--light-primary-color);
+    padding: 0.2rem;
+    border-radius: 6px;
+    width: fit-content;
+}
+
+.price-percentage {
+    font-size: 0.8rem;
+}
+
+.block-btn {
+    width: 100%;
+}

@@ -1,6 +1,11 @@
 .navbar {
     padding: 1rem;
     height: 4.5rem;
+    top: 0;
+    left: 0;
+    position: sticky;
+    grid-area: nav;
+    background-color: var(--bg-color);
 }
 
 .burger-menu-button {
