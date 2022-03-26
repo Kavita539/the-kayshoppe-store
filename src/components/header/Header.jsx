@@ -30,7 +30,7 @@ const Header = () => {
                                 className="fas fa-shopping-cart"></i></Link>
                     </li>
                     <li>
-                        <Link to="/login" className="navlist-link-item"> <button
+                        <Link to="/signin" className="navlist-link-item"> <button
                                 className="btn btn-primary">Login</button></Link>
                     </li>
                 </ul>
