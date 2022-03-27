@@ -1,0 +1,10 @@
+.loader-container {
+    min-height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader {
+    width: 5rem;
+}

@@ -7,7 +7,7 @@ const ProductGridArea = ({ setFiltersStyle }) => {
         return(
             <div className="filter-button-div">
                 <button className="btn outline-btn-primary text-icon-btn filter-button" id="show-filter-btn" onClick={()=>setFiltersStyle("show-filter-btn")}>
-                    <span className="btn-icon"><i class="fas fa-sliders-h"></i></span>Filters
+                    <span className="btn-icon"><i className="fas fa-sliders-h"></i></span>Filters
                 </button>
             </div>
         );
@@ -15,7 +15,7 @@ const ProductGridArea = ({ setFiltersStyle }) => {
     return(
         <div className="products">
             {filterBtn()}
-            <main class="main-products">
+            <main className="main-products">
                 {products.map(({ _id, title, image, brandDescription, price, discountedPrice, rating }) => (
                 <VerticalCard key={_id} title={title} image={image} price={price} description={brandDescription} discountedPrice={discountedPrice} rating={rating} />
                 ))}
