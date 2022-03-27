@@ -1,5 +1,5 @@
 /* card customization */
-.card-info-container {
+.vertical-card-info-container {
     padding: var(--sm-space);
 }
 
@@ -16,6 +16,14 @@
 
 .price-percentage {
     font-size: 0.8rem;
+}
+.vertical-card-call-to-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.8rem;
+    row-gap: 0.8rem;
+    flex-wrap: wrap;
 }
 
 .block-btn {
