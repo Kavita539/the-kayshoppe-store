@@ -1,8 +1,10 @@
 import "./home.css";
 import { CategoryCard, Header, Footer, HorizontalCard } from "../../components";
 import { Link } from "react-router-dom";
+import { useCategory } from "../../context/categoryContext";
 
 const Home = ()=>{
+    
     return(
         <>
         <Header/>
