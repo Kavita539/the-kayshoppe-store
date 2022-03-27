@@ -15,6 +15,7 @@ export const products = [
     image: "/assets/athleisure-fit tshirt.jpg",
     rating: "3",
     categoryName: "Athleisure",
+    isFeatured: false,
   },
   {
     _id: uuid(),
@@ -25,6 +26,7 @@ export const products = [
     image: "/assets/accessories douche bag.jpg",
     rating: "3.5",
     categoryName: "Accessories",
+    isFeatured: false,
   },
   {
     _id: uuid(),
@@ -32,9 +34,11 @@ export const products = [
     brandDescription: "Stay strong",
     price: "2000",
     discountedPrice: "1800",
+    featuredProductDescription: "A premium quality 5KG dumbbells for those arms.",
     image: "/assets/equipments dumbbells.jpg",
     rating: "4",
     categoryName: "Equipments",
+    isFeatured: true,
   },
   {
     _id: uuid(),
@@ -42,9 +46,11 @@ export const products = [
     brandDescription: "Nike",
     price: "3000",
     discountedPrice: "2799",
+    featuredProductDescription: "A premium quality shoes from nike. Classy yet affordable",
     image: "/assets/nike-shoes.jpg",
     rating: "4.5",
     categoryName: "Shoes",
+    isFeatured: true,
   },
   {
     _id: uuid(),
@@ -55,24 +61,7 @@ export const products = [
     image: "/assets/equipments yoga mat.jpg",
     rating: "2.5",
     categoryName: "Equipments",
+    isFeatured: false,
   }, 
 ];
 
-export const featuredProducts = [
-  {
-    _id: uuid(),
-    title: "Men slim Fit Tshirt",
-    imageDescription: "T-shirt",
-    featuredProductDescription: "A premium quality Fit T-shirt. Available in different colors.",
-    price: "850",
-    image: "",
-  },
-  {
-    _id: uuid(),
-    title: "Blue Mesh Shoes",
-    imageDescription: "shoes",
-    featuredProductDescription: "A premium quality shoes from nike. Classy yet affordable",
-    price: "2799",
-    image: "",
-  }
-];

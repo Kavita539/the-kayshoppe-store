@@ -6,7 +6,8 @@ import { useCategory, useProducts } from "../../context";
 
 const Home = ()=>{
 const { categories, loader: categoryLoader, error: categoryError } = useCategory();
-// const {products, loader:productLoader, error:productError} = useProducts();
+const {products, loader:productLoader, error:productError} = useProducts();
+const featuredProducts = products.filter(product=>product.isFeatured);
 
 return(
 <>
@@ -29,21 +30,42 @@ return(
     {/* Category section */}
     <section className="text-center" id="categories">
         <h1 className="section-heading">Categories</h1>
-
+        {categoryLoader &&
+        <Loader />}
+        {categoryError && <div>{categoryError}</div>}
         <div className="category-area">
-            {categoryLoader &&
-            <Loader />}
-            {categoryError && <div>{categoryError}</div>}
             {categories &&
             categories.map(({ _id, categoryName, image }) => (
             <CategoryCard key={_id} category={categoryName} categoryImage={image} />
             ))}
-
         </div>
     </section>
 
 
-    <HorizontalCard />
+    {/*
+    <HorizontalCard /> */}
+    {/* FeaturedProducts section */}
+    <section className="text-center">
+        <h1 className="section-heading">Featured Products</h1>
+        {productLoader &&
+        <Loader />}
+        {productError && <div>{productError}</div>}
+        <div className="featured-products-area featured-products">
+            {featuredProducts.map(
+            ({
+            _id,
+            title,
+            featuredProductDescription,
+            price,
+            discountedPrice,
+            image,
+            }) => (
+            <HorizontalCard key={_id} title={title} featuredProductDescription={featuredProductDescription}
+                price={price} discountedPrice={discountedPrice} image={image} />
+            )
+            )}
+        </div>
+    </section>
     <Footer />
 </>
 );
