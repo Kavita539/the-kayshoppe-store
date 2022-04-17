@@ -1,3 +1,8 @@
-## E-Commerce Backend
+<h1 align="center">KayShoppe Store</h1>
+<h4 align="center">Its Kayy to splurge.</h4>
 
-This folder contains the Mock Backend created for E-Commerce App. It contains different API end-points and database configuration for building E-Commerce; so that you can focus on building Frontend.
+
+
+# What is KayyShoppe Store?
+
+[KayyShoppe Store](https://github.com/Kavita539/the-kayshoppe-store) is an e-commerce store to find things related to gym.
