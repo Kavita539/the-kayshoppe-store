@@ -2,7 +2,7 @@ import "./verticalCard.css"
 
 const VerticalCard = ({image, title, brandDescription, price, discountedPrice, rating}) => {
     return(
-        <div className="card">
+        <div className="card vertical-card">
                     <div className="card-image-container">
                         <img className="responsive-img rounded-top-corner-img" src={image}
                             alt="card-img" />

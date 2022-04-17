@@ -1,4 +1,8 @@
 /* card customization */
+.vertical-card{
+    box-shadow: 0px 1px 1px 1px #a7a7a7;
+}
+
 .vertical-card-info-container {
     padding: var(--sm-space);
 }

@@ -13,14 +13,14 @@ const CategoryProvider = ({children}) => {
         (async () => {
           try {
             setError("");
-            setLoader(true);  
+            setLoader(false);  
             const res = await axios.get("/api/categories");
             if (res.status === 200) {
               setCategories(res.data.categories);
             }
           } catch (err) {
              setError(err.message);
-             setLoader(false);
+             setLoader(true);
           }
         })();
       }, []);
