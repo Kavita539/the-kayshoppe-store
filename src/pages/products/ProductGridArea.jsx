@@ -4,7 +4,7 @@ import {useFilter, useProducts} from "../../context";
 import { filterProducts, sortProductsByPrice } from "../../utils";
 
 const ProductGridArea = ({ setFiltersStyle }) => {
-    const { state } = useFilter();
+  const { state } = useFilter();
   const { products, loader, error } = useProducts();
   const sortedList = sortProductsByPrice(state.sort, products);
   const finalFilteredList = filterProducts(state, sortedList);
