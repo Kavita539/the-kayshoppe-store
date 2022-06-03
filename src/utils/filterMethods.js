@@ -14,19 +14,10 @@ const filterProducts = (state, data) => {
 
   tempData = tempData.filter(item => item.rating >= state.rating);
 
-  if (!state.includeOutOfStock) {
-    tempData = tempData.filter(product => product.inStock);
-  }
-
   if (state.category.length > 0) {
     tempData = tempData.filter(product => state.category.includes(product.category));
   }
 
-  if (state.range) {
-    tempData = tempData.filter(
-      product => state.range.min <= product.price && product.price <= state.range.max
-    );
-  }
   return tempData;
 };
 

@@ -1,8 +1,4 @@
 /* card customization */
-.vertical-card{
-    box-shadow: 0px 1px 1px 1px #a7a7a7;
-}
-
 .vertical-card-info-container {
     padding: var(--sm-space);
 }
@@ -21,6 +17,7 @@
 .price-percentage {
     font-size: 0.8rem;
 }
+
 .vertical-card-call-to-action {
     display: flex;
     justify-content: center;
@@ -32,4 +29,8 @@
 
 .block-btn {
     width: 100%;
+}
+
+.vertical-card:hover{
+    box-shadow: var(--card-shadow);
 }

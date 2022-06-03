@@ -7,7 +7,7 @@ const Footer = () => {
                 <ul className="inline-styled-list footer-list">
                     <li>
                         <a className="footer-links" href="https://github.com/Kavita539" target="_blank"><i
-                                className='bx bxl-github'></i></a>
+                                className='fab fa-github'></i></a>
                     </li>
                     <li>
                         <a className="footer-links" href="https://twitter.com/KavitaP_03" target="_blank"><i

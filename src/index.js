@@ -4,9 +4,8 @@ import "./index.css";
 import App from "./App"
 import { makeServer } from "./server";
 import { BrowserRouter as Router } from "react-router-dom";
-import {ProductListProvider} from "./context/productContext";
-import {CategoryProvider} from "./context/categoryContext";
-import {FilterProvider} from "./context/filterContext";
+import {ProductListProvider, CategoryProvider, FilterProvider} from "./context";
+
 
 
 // Call make Server

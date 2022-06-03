@@ -1,6 +1,7 @@
 import "./verticalCard.css"
 
-const VerticalCard = ({image, title, brandDescription, price, discountedPrice, rating}) => {
+const VerticalCard = ({product}) => {
+    const { image, title, brandDescription, price, discountedPrice, rating } = product;
     return(
         <div className="card vertical-card">
                     <div className="card-image-container">
