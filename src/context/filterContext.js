@@ -29,17 +29,6 @@ const FilterProvider = ({
 		rating: 1,
 	});
 
-	// useEffect(() => {
-	// 	priceRange.min &&
-	// 		priceRange.max &&
-	// 		dispatch({
-	// 			type: "SET_RANGE",
-	// 			payload: {
-	// 				min: priceRange ?.min,
-	// 				max: priceRange ?.max
-	// 			}
-	// 		});
-	// }, [priceRange.min, priceRange.max]);
 
 
 	return  <filterContext.Provider value = {{ state, dispatch}} > {children} </filterContext.Provider> ;
