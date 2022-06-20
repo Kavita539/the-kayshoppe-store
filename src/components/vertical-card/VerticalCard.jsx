@@ -18,8 +18,8 @@ const VerticalCard = ({product}) => {
                                 <div className="card-heart-logo"><i className="fas fa-heart like-btn"></i></div>
                             </div>
                             <div className="price">
-                            <p class="discount-price">₹ {discountedPrice}</p>
-                                <p class="actual-price">₹ {price}</p>
+                            <p className="discount-price">₹ {discountedPrice}</p>
+                                <p className="actual-price">₹ {price}</p>
                             </div>    
                             <div className="rating text-semibold text-sm"><i className="fas fa-sm fa-star"></i>{rating}</div>
                         </div>

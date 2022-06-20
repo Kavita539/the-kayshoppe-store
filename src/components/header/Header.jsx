@@ -1,7 +1,10 @@
 import "./header.css";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../context";
 
 const Header = () => {
+    const { state: user, logout } = useAuth();
+
     return(
         <nav className="navbar">
                 <div className="left-navbar">
@@ -21,6 +24,10 @@ const Header = () => {
                     </div>
                 </div>
                 <ul className="right-navbar">
+                <li>
+                        <Link to="/products" className="navlist-link-item"> <button
+                                className="btn link-btn">Shop Now</button></Link>
+                    </li>
                     <li>
                         <Link to="/wishlist" className="navlist-link-item"> <i
                                 className="fas fa-heart fa-md"></i></Link>
@@ -30,8 +37,8 @@ const Header = () => {
                                 className="fas fa-shopping-cart"></i></Link>
                     </li>
                     <li>
-                        <Link to="/signin" className="navlist-link-item"> <button
-                                className="btn btn-primary">Login</button></Link>
+                        <Link to="/signin" className="navlist-link-item"> <i
+                                className="fas fa-user"></i></Link>
                     </li>
                 </ul>
             </nav>

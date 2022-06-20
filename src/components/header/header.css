@@ -64,6 +64,14 @@
 
 .right-navbar .navlist-link-item {
     display: block;
+    gap: var(--padding-sm);
+}
+
+.link-btn {
+    border: none;
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--primary-color);
 }
 
 /* media-queries */
