@@ -14,6 +14,8 @@ const actionTypes ={
     SET_RANGE: "SET_RANGE",
     SET_MIN: "SET_MIN",
     SET_MAX: "SET_MAX",
+    LOGIN_USER: "LOGI_USER",
+    LOGOUT_USER:"LOGOUT_USER",
 }
 
 export {actionTypes};
