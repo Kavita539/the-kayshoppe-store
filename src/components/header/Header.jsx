@@ -1,10 +1,15 @@
 import "./header.css";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../context";
+import { useAuth, useCart } from "../../context";
 
 const Header = () => {
-const { state: user, logout } = useAuth();
-
+    const {
+        state: { token },
+        logout,
+    } = useAuth();
+    const {
+        state: { cartItems },
+    } = useCart();
 return(
 <nav className="navbar">
     <div className="left-navbar">
@@ -34,7 +39,7 @@ return(
         <li>
             <Link to="/cart" className="navlist-link-item"> <i className="fas fa-shopping-cart"></i></Link>
         </li>
-        {user.token ? (
+        {token ? (
         <li>
             <button className="btn outline-btn logout-btn" onClick={()=> logout()}>
                 LogOut
