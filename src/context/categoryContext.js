@@ -1,4 +1,7 @@
 import { useContext, useState, useEffect, createContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { useFilter } from "./filterContext";
+import { useProducts } from "./productContext";
 import axios from "axios";
 
 const categoryContext = createContext();
@@ -8,6 +11,9 @@ const CategoryProvider = ({children}) => {
     const [categories, setCategories] = useState([]);
     const [loader, setLoader] = useState(false);
     const [error, setError] = useState("");
+    const navigate = useNavigate();
+    const { dispatch: filterDispatch } = useFilter();
+    const { priceRange } = useProducts();
     
     useEffect(() => {
         (async () => {
@@ -25,8 +31,14 @@ const CategoryProvider = ({children}) => {
         })();
       }, []);
 
+      const navigateToCategory = category => {
+        filterDispatch({ type: "CLEAR", payload: { min: priceRange.min, max: priceRange.max } });
+        filterDispatch({ type: "FILTER_CATEGORY", payload: category });
+        navigate("/products");
+      };
+
       return(
-          <categoryContext.Provider value={{categories, loader,error}}>
+          <categoryContext.Provider value={{categories, loader, error, navigateToCategory}}>
               {children}
           </categoryContext.Provider>
       );

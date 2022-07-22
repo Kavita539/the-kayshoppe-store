@@ -1,15 +1,20 @@
 import "./header.css";
 import { Link } from "react-router-dom";
-import { useAuth, useCart } from "../../context";
+import { useAuth, useCart, useWishlist } from "../../context";
 
 const Header = () => {
-    const {
-        state: { token },
-        logout,
-    } = useAuth();
-    const {
-        state: { cartItems },
-    } = useCart();
+const {
+state: { token },
+logout,
+} = useAuth();
+
+const {
+state: { cartItems },
+} = useCart();
+
+const {
+state: { wishedItems },
+} = useWishlist();
 return(
 <nav className="navbar">
     <div className="left-navbar">
@@ -34,15 +39,36 @@ return(
             </Link>
         </li>
         <li>
-            <Link to="/wishlist" className="navlist-link-item"> <i className="fas fa-heart fa-md"></i></Link>
+            <Link to="/wishlist" className="navlist-link-item"> <span className="badge-container"><i
+                    className="fas fa-heart fa-md"></i>
+                <span className={ token && wishedItems.length> 0
+                    ? "status-badge number-badge"
+                    : "display-none"
+                    }
+                    >
+                    0
+                    {wishedItems.length}
+                </span>
+            </span>
+            </Link>
         </li>
         <li>
-            <Link to="/cart" className="navlist-link-item"> <i className="fas fa-shopping-cart"></i></Link>
+            <Link to="/cart" className="navlist-link-item"> <span className="badge-container"><i
+                    className="fas fa-shopping-cart"></i>
+                <span className={ token && cartItems.length> 0
+                    ? "status-badge number-badge"
+                    : "display-none"
+                    }
+                    >
+                    {cartItems.length}
+                </span>
+            </span>
+            </Link>
         </li>
         {token ? (
         <li>
             <button className="btn outline-btn logout-btn" onClick={()=> logout()}>
-                LogOut
+            <i className="fas fa-sign-out-alt"></i>
             </button>
         </li>
         ) : (

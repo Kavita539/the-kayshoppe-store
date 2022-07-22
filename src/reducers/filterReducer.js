@@ -22,15 +22,13 @@ const filterReducer = (state, action) => {
                 category: []
             };
             const isCategoryExist = state.category.includes(action.payload);
-            return isCategoryExist ?
-                {
-                    ...state,
-                    category: state.category.filter(item => item !== action.payload),
-                } :
-                {
-                    ...state,
-                    category: [...state.category, action.payload]
-                };
+            return isCategoryExist ? {
+                ...state,
+                category: state.category.filter(item => item !== action.payload),
+            } : {
+                ...state,
+                category: [...state.category, action.payload]
+            };
 
         case SET_RATING:
             return {

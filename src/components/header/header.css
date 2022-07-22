@@ -78,6 +78,29 @@
     border: none;
 }
 
+.badge-container {
+    position: relative;
+}
+
+.number-badge {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    width: 1.2rem;
+    height: 1.2rem;
+    border: none;
+    bottom: 0.7rem;
+    right: -1rem;
+    border-radius: 50%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-none {
+    display: none;
+}
+
 /* media-queries */
 @media only screen and (max-width: 1024px) {
     .burger-menu-button {

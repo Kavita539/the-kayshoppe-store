@@ -37,10 +37,10 @@ const loginAsGuest = e => {
 e.preventDefault();
 setSubmitted(true);
 setUserInput({
-email: "adarshbalika@gmail.com",
-password: "adarshbalika",
+email: "Kayyshopper@gmail.com",
+password: "kayyshopper",
 });
-login({ email: "adarshbalika@gmail.com", password: "adarshbalika" }, setLoader, setError, from);
+login({ email: "Kayyshopper@gmail.com", password: "kayyshopper" }, setLoader, setError, from);
 };
 
 useEffect(() => {

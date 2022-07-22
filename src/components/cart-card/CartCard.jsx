@@ -1,9 +1,13 @@
-import { useCart } from "../../context";
+import { useCart, useWishlist } from "../../context";
+import { useState, useEffect } from "react";
+import { CounterButtons } from "./counterButtons";
 import "./cartCard.css"
 
 const CartCard = ({ product }) => {
 const { _id, title, brandDescription, price, discountedPrice, qty, image } = product;
-const { changeQuantity, removeFromCart } = useCart();
+const { changeQuantity, removeFromCart, moveItemFromCartToWishlist } = useCart();
+const [isFetching, setIsFetching] = useState(false);
+
 return(
 <div className="card horizontal-card">
   <div className="card-image-container">
@@ -33,7 +37,8 @@ return(
       </div>
     </div>
     <div className="card-call-to-action">
-      <button className="btn outline-btn-primary block-btn">Move to wishlist</button>
+      <button className="btn outline-btn-primary block-btn" onClick={() => moveItemFromCartToWishlist(product, setIsFetching)}
+            disabled={isFetching ? true : false}>Move to wishlist</button>
       <button className="btn outline-btn-secondary block-btn" onClick={()=> removeFromCart(_id)}>
         Remove from cart
       </button>

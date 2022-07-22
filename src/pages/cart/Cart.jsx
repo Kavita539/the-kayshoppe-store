@@ -13,6 +13,7 @@ const Cart = () => {
     return (
       <>
       <Header/>
+      <div class="children-container">
       <div className="cart-container">
        <h2 className="text-center">My Cart({cartItems?.length})</h2>
 
@@ -22,8 +23,9 @@ const Cart = () => {
             <CartCard key={product._id} product={product} />
           ))}
         </div>
-        <BillDistribution/>
+        {cartItems.length > 0 && <BillDistribution />}
        </div>   
+        </div>
         </div>
         <Footer/>
       </>
