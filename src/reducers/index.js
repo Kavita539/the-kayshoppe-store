@@ -10,3 +10,7 @@ export {
     cartReducer
 }
 from "./cartReducer";
+export {
+    wishlistReducer
+}
+from "./wishlistReducer";

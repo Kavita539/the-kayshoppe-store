@@ -8,6 +8,7 @@ import axios from "axios";
 import {
     useAuth
 } from "./authContext";
+import { useWishlist } from "./wishlistContext";
 import {
     cartReducer
 } from "../reducers";
@@ -35,6 +36,11 @@ const CartProvider = ({
         },
     } = useAuth();
 
+    const {
+        state: { wishedItems },
+        addToWishlist,
+    } = useWishlist();
+
     useEffect(() => {
         token &&
             (async () => {
@@ -56,8 +62,9 @@ const CartProvider = ({
             })();
     }, [token]);
 
-    const addToCart = async product => {
+    const addToCart = async (product, setIsFetching) => {
         try {
+            setIsFetching(true);
             const res = await axios.post(
                 "/api/user/cart", {
                     product,
@@ -73,9 +80,11 @@ const CartProvider = ({
                     type: SET_CART,
                     payload: res.data.cart
                 });
+                setIsFetching(false);
             }
         } catch (err) {
-            console.log(err);
+            console.log(err.message);
+            setIsFetching(false);
         }
     };
 
@@ -126,13 +135,21 @@ const CartProvider = ({
         }
     };
 
+    const moveItemFromCartToWishlist = (product, setIsFetching) => {
+        wishedItems.find(item => item._id === product._id) ?
+            null :
+            addToWishlist(product, setIsFetching); 
+            removeFromCart(product._id);
+    };
+
     return ( <cartContext.Provider value = {
             {
                 state,
                 dispatch,
                 addToCart,
                 changeQuantity,
-                removeFromCart
+                removeFromCart,
+                moveItemFromCartToWishlist
             }
         } > {
             children

@@ -1,4 +1,4 @@
-import { useCart, useAuth } from "../../context";
+import { useCart, useAuth, useWishlist } from "../../context";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
@@ -24,6 +24,11 @@ state: {
 cartItems
 },
 } = useCart();
+
+const {
+    state: { wishedItems },
+    addToWishlist,
+} = useWishlist();
 
 const [loader, setLoader] = useState(false);
 const [error, setError] = useState("");
@@ -72,7 +77,17 @@ return(
               Add to cart
             </button>
           )}
-            <button className="btn outline-btn-secondary">Move to wishlist</button>
+          {wishedItems.find(item => item._id === product._id) ? (
+            <Link to="/wishlist" className="btn btn-outline-primary block-btn text-center">
+            Go to Wishlist
+            </Link>
+            ) : (
+            <button className="btn outline-btn-primary block-btn"disabled={loader} onClick={()=> (token ?
+                addToWishlist(product, setLoader, setError) : navigation("/signin"))}
+                >
+                Move to wishlist
+            </button>
+          )}
         </div>
     </div>
 </div>

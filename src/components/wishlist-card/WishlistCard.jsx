@@ -1,8 +1,15 @@
+import { useWishlist } from "../../context";
+import { AddToCartButton } from "../vertical-card/AddToCartButton";
+
+
 const WishlistCard = ({product}) => {
-    const { title, brandDescription, price, discountedPrice, rating, image } = product;
+    const { _id, title, brandDescription, price, discountedPrice, rating, image } = product;
+
+    const { removeFromWishlist } = useWishlist();
+
     return(
         <div className="card">
-                    <button className="card-close-btn"><i className="fas fa-times fa-md"></i></button>
+                    <button className="card-close-btn" onClick={() => removeFromWishlist(_id)}><i className="fas fa-times fa-md"></i></button>
                     <div className="card-image-container">
                         <img className="responsive-img rounded-top-corner-img" src={image}
                             alt="card-img" />
@@ -22,10 +29,7 @@ const WishlistCard = ({product}) => {
                             <div className="rating text-semibold text-sm"><i className="fas fa-sm fa-star"></i>{rating}</div>
                         </div>
                         <div className="card-call-to-action">
-                            <button className="btn text-icon-btn btn-primary block-btn">
-                                <i className="fas fa-shopping-cart"></i>
-                                Add to cart
-                            </button>
+                        <AddToCartButton product={product} />
                         </div>
                     </div>
                 </div>

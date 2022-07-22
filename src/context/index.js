@@ -23,3 +23,8 @@ export {
     useCart
 }
 from "./cartContext";
+export {
+    useWishlist,
+    WishlistProvider
+}
+from "./wishlistContext";
