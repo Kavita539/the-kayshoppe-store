@@ -51,19 +51,9 @@ return(
         <Loader />}
         {productError && <div>{productError}</div>}
         <div className="featured-products-area featured-products">
-            {featuredProducts.map(
-            ({
-            _id,
-            title,
-            featuredProductDescription,
-            price,
-            discountedPrice,
-            image,
-            }) => (
-            <HorizontalCard key={_id} title={title} featuredProductDescription={featuredProductDescription}
-                price={price} discountedPrice={discountedPrice} image={image} />
-            )
-            )}
+        {featuredProducts.map(product => (
+            <HorizontalCard key={product._id} product={product} />
+          ))}
         </div>
     </section>
     <Footer />

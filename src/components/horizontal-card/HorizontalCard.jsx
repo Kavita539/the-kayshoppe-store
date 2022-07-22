@@ -1,10 +1,38 @@
+import { useCart, useAuth } from "../../context";
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 
+const HorizontalCard = ({product}) => {
+const {
+_id,
+title,
+featuredProductDescription,
+price,
+discountedPrice,
+image,
+} = product;
 
-const HorizontalCard = ({title, featuredProductDescription, image, price, discountedPrice}) => {
+const {
+state: {
+token
+},
+} = useAuth();
+
+const {
+addToCart,
+state: {
+cartItems
+},
+} = useCart();
+
+const [loader, setLoader] = useState(false);
+const [error, setError] = useState("");
+const navigation = useNavigate();
 
 return(
 
 <div className="card horizontal-card card-shadow">
+{error && <div>{error}</div>}
     <span className="card-badge">New</span>
     <div className="card-image-container">
         <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
@@ -23,8 +51,27 @@ return(
             </div>
         </div>
         <div className="card-call-to-action">
-            <button className="btn text-icon-btn btn-primary"><span><i className="fas fa-shopping-cart"></i></span>Add
-                to cart</button>
+        {cartItems.find(item => item._id === product._id) ? (
+            <Link to="/cart" className="btn text-icon-btn btn-primary block-btn text-center">
+              <span>
+                <i className="fas fa-shopping-cart"></i>
+              </span>
+              Go to cart
+            </Link>
+          ) : (
+            <button
+              className="btn text-icon-btn btn-primary block-btn text-center"
+              disabled={loader}
+              onClick={() =>
+                token ? addToCart(product, setLoader, setError) : navigation("/signin")
+              }
+            >
+              <span className="btn-icon">
+                <i className="fas fa-shopping-cart"></i>
+              </span>
+              Add to cart
+            </button>
+          )}
             <button className="btn outline-btn-secondary">Move to wishlist</button>
         </div>
     </div>

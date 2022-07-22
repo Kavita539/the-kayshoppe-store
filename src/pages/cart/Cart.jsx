@@ -22,7 +22,7 @@ const Cart = () => {
             <CartCard key={product._id} product={product} />
           ))}
         </div>
-        <BillDistribution/>
+        {cartItems.length > 0 && <BillDistribution />}
        </div>   
         </div>
         <Footer/>

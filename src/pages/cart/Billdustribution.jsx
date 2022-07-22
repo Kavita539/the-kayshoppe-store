@@ -43,7 +43,7 @@ const BillDistribution = () => {
             <h4>₹ {totalPrices.discountedPrice + totalPrices.deliverCharges}/-</h4>
           </div>
           <hr/>
-          <p className="text-lg">You will save <span className="text-lg text-bold">₹ 650</span> on this order.</p>
+          <p className="text-lg">You will save <span className="text-lg text-bold">₹ {totalPrices.price - totalPrices.discountedPrice}</span> on this order.</p>
           <div className="cart-cta">
             <button className="btn btn-primary block-btn">Place Order</button>
           </div>
