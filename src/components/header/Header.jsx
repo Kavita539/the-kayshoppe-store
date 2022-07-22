@@ -68,7 +68,7 @@ return(
         {token ? (
         <li>
             <button className="btn outline-btn logout-btn" onClick={()=> logout()}>
-            <i class="fas fa-sign-out-alt"></i>
+            <i className="fas fa-sign-out-alt"></i>
             </button>
         </li>
         ) : (

@@ -18,11 +18,11 @@ ReactDOM.render(
       <WishlistProvider>
       <CartProvider>
       <ProductListProvider>
-      <CategoryProvider>
       <FilterProvider>
+      <CategoryProvider>
        <App />
+       </CategoryProvider>
       </FilterProvider>
-      </CategoryProvider>
       </ProductListProvider>
       </CartProvider>
       </WishlistProvider>

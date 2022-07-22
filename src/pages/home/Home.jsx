@@ -42,8 +42,6 @@ return(
     </section>
 
 
-    {/*
-    <HorizontalCard /> */}
     {/* FeaturedProducts section */}
     <section className="text-center">
         <h1 className="section-heading">Featured Products</h1>
