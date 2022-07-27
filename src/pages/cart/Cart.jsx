@@ -1,4 +1,4 @@
-import { Header, Footer, CartCard } from "../../components";
+import { CartCard } from "../../components";
 import "./cart.css"
 import { BillDistribution } from "./Billdustribution";
 import { useCart } from "../../context";
@@ -12,7 +12,6 @@ const Cart = () => {
 
     return (
       <>
-      <Header/>
       <div class="children-container">
       <div className="cart-container">
        <h2 className="text-center">My Cart({cartItems?.length})</h2>
@@ -27,7 +26,6 @@ const Cart = () => {
        </div>   
         </div>
         </div>
-        <Footer/>
       </>
     );
 };

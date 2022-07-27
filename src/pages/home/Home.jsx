@@ -1,5 +1,5 @@
 import "./home.css";
-import { CategoryCard, Header, Footer, HorizontalCard, Loader } from "../../components";
+import { CategoryCard, HorizontalCard, Loader } from "../../components";
 import { Link } from "react-router-dom";
 import { useCategory, useProducts } from "../../context";
 
@@ -11,7 +11,6 @@ const featuredProducts = products.filter(product=>product.isFeatured);
 
 return(
 <>
-    <Header />
     {/* Banner section for the e-commerce */}
     <div className="banner flex-center"
         style={{ backgroundImage: `url(https://www.pngmagic.com/product_images/ecommerce-website-banner.jpg)` }}>
@@ -54,7 +53,6 @@ return(
           ))}
         </div>
     </section>
-    <Footer />
 </>
 );
 }

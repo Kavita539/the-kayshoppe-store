@@ -2,7 +2,7 @@ import "./header.css";
 import { Link } from "react-router-dom";
 import { useAuth, useCart, useWishlist } from "../../context";
 
-const Header = () => {
+const Header = ({ navAside, setNavAside }) => {
 const {
 state: { token },
 logout,
@@ -19,11 +19,11 @@ return(
 <nav className="navbar">
     <div className="left-navbar">
         <button id="menu-icon-button" className="burger-menu-button navlist-link-item">
-            <i className="fas fa-bars"></i>
+            <i className="fas fa-bars" onClick={() => setNavAside(prevState => !prevState)}></i>
         </button>
         <Link to="/" className="link-no-style">
-        <div className="nav-logo-title"> <span className="text-xl custom-color">K</span>ayy<span
-                className="text-xl custom-color">S</span>hoppe</div>
+        <div className="nav-logo-title"> <span className="text-xl custom-color span-letter">K</span>ayy<span
+                className="text-xl custom-color span-letter">S</span>hoppe</div>
         <div className="nav-logo-tagline custom-color">ITS KAYY TO SPLURGE!</div>
         </Link>
     </div>
@@ -35,7 +35,7 @@ return(
     </div>
     <ul className="right-navbar">
         <li>
-            <Link to="/products" className="navlist-link-item"> <button className="btn link-btn">Shop Now</button>
+            <Link to="/products" className="navlist-link-item display-none-link"> <button className="btn link-btn">Shop Now</button>
             </Link>
         </li>
         <li>
@@ -67,13 +67,13 @@ return(
         </li>
         {token ? (
         <li>
-            <button className="btn outline-btn logout-btn" onClick={()=> logout()}>
+            <button className="navlist-link-item display-none-link btn outline-btn logout-btn" onClick={()=> logout()}>
             <i className="fas fa-sign-out-alt"></i>
             </button>
         </li>
         ) : (
         <li>
-            <Link to="/signin" className="navlist-link-item"> <i className="fas fa-user"></i></Link>
+            <Link to="/signin" className="navlist-link-item display-none-link"> <i className="fas fa-user"></i></Link>
 
         </li>
         )}

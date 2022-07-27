@@ -39,16 +39,13 @@
     letter-spacing: 1px;
 }
 
-.overlay-text {
+.category-overlay-text {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--secondary-color);
+    width: 100%;
     font-size: 1.2rem;
-    padding: var(--sm-space);
-    border-radius: 5px;
-}
-  
-.overlay-container:hover {
-    background-color: transparent;
-    color: var(--primary-color);
-    transition: 0.2s ease-in;
 }
   
 .category {
@@ -60,4 +57,13 @@
   
 .category:hover {
     box-shadow: var(--card-shadow);
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s,-webkit-transform 1s;
+}
+
+.zoom {
+    transition: -webkit-transform 1s;
+    transition: transform 1s;
+    transition: transform 1s,-webkit-transform 1s;
 }

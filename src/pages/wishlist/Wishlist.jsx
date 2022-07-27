@@ -1,5 +1,4 @@
-import { Header, Footer, WishlistCard } from "../../components";
-import { v4 as uuid } from "uuid";
+import { WishlistCard } from "../../components";
 import { useWishlist } from "../../context";
 import "./wishlist.css";
 
@@ -10,7 +9,6 @@ const {
 
     return (
       <>
-      <Header/>
       <div class="children-container">
         <div class="wishlist-container">
             <h2 class="text-center">My Wishlist({wishedItems.length})</h2>
@@ -21,7 +19,6 @@ const {
             </div>
         </div>
       </div>
-        <Footer/>
       </>
     );
   };
