@@ -37,7 +37,6 @@ setFormErrors({});
 
 return(
 <>
-    <Header />
     <div className="authentication-container">
         <div className="form-div">
             <form className="form-grp">
@@ -78,7 +77,6 @@ return(
         </div>
 
     </div>
-    <Footer />
 </>
 );
 };

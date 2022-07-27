@@ -3,7 +3,7 @@ import "./products.css";
 import {useFilter, useProducts} from "../../context";
 import { filterProducts, sortProductsByPrice } from "../../utils";
 
-const ProductGridArea = ({ setFiltersStyle }) => {
+const ProductGridArea = ({ showFilters, setShowFilters }) => {
   const { state } = useFilter();
   const { products, loader, error } = useProducts();
   const sortedList = sortProductsByPrice(state.sort, products);
@@ -11,9 +11,21 @@ const ProductGridArea = ({ setFiltersStyle }) => {
     const filterBtn = () => {
         return(
             <div className="filter-button-div">
-                <button className="btn outline-btn-primary text-icon-btn filter-button" id="show-filter-btn" onClick={()=>setFiltersStyle("show-filter-btn")}>
-                    <span className="btn-icon"><i className="fas fa-sliders-h"></i></span>Filters
+                {!showFilters ? (
+                <button className="btn outline-btn-primary text-icon-btn filter-button" onClick={()=>
+                    setShowFilters(true)}>
+                    <span className="btn-icon">
+                        <i className="fas fa-sliders-h"></i>
+                    </span>
+                    Filters
                 </button>
+                ) : (
+                <button className="btn outline-btn-primary text-icon-btn filter-button" onClick={()=>
+                    setShowFilters(false)}>
+                    <span className="btn-icon"></span>
+                    Apply
+                </button>
+                )}
             </div>
         );
     }

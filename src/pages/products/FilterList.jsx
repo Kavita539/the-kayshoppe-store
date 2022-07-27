@@ -9,18 +9,16 @@ const {
   CLEAR,
 } = actionTypes;
 
-const FilterList = ({filtersStyle, setFiltersStyle}) => {
+const FilterList = ({showFilters, setShowFilters}) => {
     const { state, dispatch } = useFilter();
   const { priceRange } = useProducts();
   const { categories } = useCategory();
   const categoriesNames = categories.map(category => category.categoryName);
     return(
-        <section className={filtersStyle} id="filters">
-            <button className="filter-close-btn"  onClick={() => setFiltersStyle("filter-close-btn")}>
-                <span className="btn-icon"><i className="fas fa-times"></i></span>
-            </button>
+            <section className={`filters ${showFilters ? "show-filters" : ""}`} id="filters">
+            
             <div className="filter-title">
-                <h5>Filters</h5>
+                <h5 className="filter-name">Filters</h5>
                 <button
           className="btn link-btn primary-btn"
           onClick={() =>

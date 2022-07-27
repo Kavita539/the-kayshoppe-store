@@ -50,7 +50,6 @@ setFormErrors(() => validLoginFormChecker(userInput));
 
 return(
 <>
-  <Header />
 
   <div className="authentication-container">
     <div className="form-div">
@@ -93,7 +92,6 @@ return(
     </div>
 
   </div>
-  <Footer />
 </>
 );
 };
