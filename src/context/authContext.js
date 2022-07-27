@@ -24,6 +24,7 @@ const useAuth = () => useContext(authContext);
 
 const initialState = {
     userName: JSON.parse(localStorage.getItem("jwt"))?.userName || "",
+    email: JSON.parse(localStorage.getItem("jwt"))?.email || "",
     token: JSON.parse(localStorage.getItem("jwt"))?.token || "",
   };
 
@@ -43,7 +44,7 @@ const AuthProvider = ({
                 setLoader(false);
 
                 const {
-                    firstName
+                    firstName, email
                 } = res.data.createdUser;
                 const {
                     encodedToken
@@ -51,14 +52,16 @@ const AuthProvider = ({
 
                 localStorage.setItem("jwt", JSON.stringify({
                     userName: firstName,
-                    token: encodedToken
+                    token: encodedToken,
+                    email: email
                 }));
 
                 dispatch({
                     type: LOGIN_USER,
                     payload: {
                         userName: firstName,
-                        token: encodedToken
+                        token: encodedToken,
+                        email: email
                     },
                 });
 
@@ -79,21 +82,24 @@ const AuthProvider = ({
                 setLoader(false);
 
                 const {
-                    firstName
+                    firstName,
+                    email
                 } = res.data.foundUser;
                 const {
                     encodedToken
                 } = res.data;
                 localStorage.setItem("jwt", JSON.stringify({
                     userName: firstName,
-                    token: encodedToken
+                    token: encodedToken,
+                    email: email
                 }));
 
                 dispatch({
                     type: LOGIN_USER,
                     payload: {
                         userName: firstName,
-                        token: encodedToken
+                        token: encodedToken,
+                        email: email
                     },
                 });
 

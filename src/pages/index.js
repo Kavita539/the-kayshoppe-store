@@ -4,3 +4,4 @@ export { Cart } from "./cart/Cart";
 export { Wishlist } from "./wishlist/Wishlist";
 export { Signin } from "./authentication-pages/Signin";
 export { Signup } from "./authentication-pages/Signup";
+export { Profile } from "./user-profile/Profile";

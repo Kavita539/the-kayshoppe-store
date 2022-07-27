@@ -67,9 +67,9 @@ return(
         </li>
         {token ? (
         <li>
-            <button className="navlist-link-item display-none-link btn outline-btn logout-btn" onClick={()=> logout()}>
-            <i className="fas fa-sign-out-alt"></i>
-            </button>
+            <Link to="/user/profile" className="navlist-link-item display-none-link">
+            <i className="fas fa-user"></i>
+            </Link>
         </li>
         ) : (
         <li>
