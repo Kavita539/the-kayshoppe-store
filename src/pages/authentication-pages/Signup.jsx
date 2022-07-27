@@ -12,7 +12,7 @@ const [submitted, setSubmitted] = useState(false);
 const [loader, setLoader] = useState(false);
 const [error, setError] = useState("");
 const [userInput, setUserInput] = useState({
-name: "",
+firstName: "",
 lastName: "",
 email: "",
 password: "",
@@ -46,7 +46,7 @@ return(
                 {loader &&
                 <Loader />}
                 {error && <p className="text-danger text-center">{error}</p>}
-                <Input type="text" defaultValue={userInput.name} name="name" label="Name" helperText={formErrors.name}
+                <Input type="text" defaultValue={userInput.firstName} name="firstName" label="Name" helperText={formErrors.firstName}
                     showError={submitted} required={true} changeHandler={changeHandler} />
 
                 <Input type="text" defaultValue={userInput.lastName} name="lastName" label="Lastname"

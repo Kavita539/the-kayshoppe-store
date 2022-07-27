@@ -15,6 +15,7 @@ import {
 import {
     actionTypes
 } from "../reducers/actionTypes";
+import toast from "react-hot-toast";
 
 const {
     SET_CART
@@ -55,9 +56,11 @@ const CartProvider = ({
                             type: SET_CART,
                             payload: res.data.cart
                         });
+                        
                     }
                 } catch (err) {
                     console.log(err);
+
                 }
             })();
     }, [token]);
@@ -81,10 +84,12 @@ const CartProvider = ({
                     payload: res.data.cart
                 });
                 setIsFetching(false);
+                toast.success("Product added to cart");
             }
         } catch (err) {
             console.log(err.message);
             setIsFetching(false);
+            toast.error("Something went wrong,Please try again");
         }
     };
 
@@ -107,9 +112,11 @@ const CartProvider = ({
                     type: SET_CART,
                     payload: res.data.cart
                 });
+                toast.success("Product quantity updated");
             }
         } catch (err) {
             console.log(err);
+            toast.error("Something went wrong,Please try again");
         }
     };
 
@@ -129,15 +136,19 @@ const CartProvider = ({
                     type: SET_CART,
                     payload: res.data.cart
                 });
+                toast.success("Product removed from cart");
             }
         } catch (err) {
             console.log(err);
+            toast.error("Something went wrong,Please try again");
         }
     };
 
     const moveItemFromCartToWishlist = (product, setIsFetching) => {
         wishedItems.find(item => item._id === product._id) ?
-            null :
+         toast(<span>Item is already present in wishlist</span>, {
+            icon: "👌",
+          }) :
             addToWishlist(product, setIsFetching); 
             removeFromCart(product._id);
     };

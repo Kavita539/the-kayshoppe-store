@@ -1,20 +1,20 @@
 import { useCart, useWishlist } from "../../context";
 import { useState, useEffect } from "react";
-import { CounterButtons } from "./counterButtons";
+import { Link } from "react-router-dom";
 import "./cartCard.css"
 
 const CartCard = ({ product }) => {
-const { _id, title, brandDescription, price, discountedPrice, qty, image } = product;
+const { id, _id, title, brandDescription, price, discountedPrice, qty, image } = product;
 const { changeQuantity, removeFromCart, moveItemFromCartToWishlist } = useCart();
 const [isFetching, setIsFetching] = useState(false);
 
 return(
 <div className="card horizontal-card">
-  <div className="card-image-container">
+  <Link to={`/products/details/${id}`} className="card-image-container">
     <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
-  </div>
+  </Link>
   <div className="card-info-container">
-    <div className="card-info text-left">
+    <Link to={`/products/details/${id}`} className="card-info text-left">
       <div className="card-title">
         <div>
           <h3 className="card-title-header">{title}</h3>
@@ -35,7 +35,7 @@ return(
           +
         </button>
       </div>
-    </div>
+    </Link>
     <div className="card-call-to-action">
       <button className="btn outline-btn-primary block-btn" onClick={() => moveItemFromCartToWishlist(product, setIsFetching)}
             disabled={isFetching ? true : false}>Move to wishlist</button>

@@ -13,6 +13,7 @@ import {
 import {
     actionTypes
 } from "../reducers/actionTypes";
+import toast from "react-hot-toast";
 
 const {
     LOGIN_USER,
@@ -64,7 +65,7 @@ const AuthProvider = ({
                         email: email
                     },
                 });
-
+                toast.success(`Hi! ${firstName}`, { icon: "👋" });
                 navigate("/");
             }
         } catch (err) {
@@ -102,7 +103,7 @@ const AuthProvider = ({
                         email: email
                     },
                 });
-
+                toast.success(`Hi! ${firstName}`, { icon: "👋" });
                 navigate(from, {
                     replace: true
                 });
@@ -119,6 +120,7 @@ const AuthProvider = ({
         });
         navigate("/");
         localStorage.removeItem("jwt");
+        toast.success("User LoggedOut!");
     };
 
     return ( <authContext.Provider value = {

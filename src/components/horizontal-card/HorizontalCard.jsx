@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const HorizontalCard = ({product}) => {
 const {
-_id,
+id,
 title,
 featuredProductDescription,
 price,
@@ -39,11 +39,11 @@ return(
 <div className="card horizontal-card card-shadow">
 {error && <div>{error}</div>}
     <span className="card-badge">New</span>
-    <div className="card-image-container">
+    <Link to={`/products/details/${id}`} className="card-image-container">
         <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
-    </div>
+    </Link>
     <div className="card-info-container">
-        <div className="card-info text-left">
+        <Link to={`/products/details/${id}`} className="card-info text-left">
             <div className="card-title">
                 <div>
                     <h3 className="card-title-header">{title}</h3>
@@ -54,7 +54,7 @@ return(
                 <p className="discount-price">₹{discountedPrice}</p>
                 <p className="actual-price">₹{price}</p>
             </div>
-        </div>
+        </Link>
         <div className="card-call-to-action">
         {cartItems.find(item => item._id === product._id) ? (
             <Link to="/cart" className="btn text-icon-btn btn-primary block-btn text-center">
