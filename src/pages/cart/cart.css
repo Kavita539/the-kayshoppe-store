@@ -134,6 +134,7 @@
     .main-container{
       width: 100%;
     }
+
     .cart{
       width: 100%;
       align-items: center;
@@ -144,15 +145,31 @@
     }
     
     .horizontal-card{
-      width: 18rem;
+      width: 22rem;
+    }
+
+    .discount-price {
+      font-size: 1rem;
+    }
+
+    .actual-price {
+      font-size: 0.9rem;
     }
   
+    .horizontal-card
+    .card-title-header {
+      font-size: 0.9rem;
+    }
+    .card-paragraph {
+      font-size: 0.8rem;
+    }
+
     .bill-distribution-div{
       width: 18rem;
     }
   
     .horizontal-card .card-image-container {
-      width: 8rem;
+      width: 11rem;
     }
   
     .card-info-container {
@@ -165,11 +182,12 @@
     }
   
     .card-call-to-action button{
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
   
     .card-call-to-action .btn{
       margin: 5px;
       padding: var(--sm-space);
+      font-size: 0.8rem;
     }
   }
