@@ -1,4 +1,4 @@
-import { Header, Footer, Input, Loader } from "../../components";
+import { Input, PasswordInput, Loader } from "../../components";
 import {useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./authentication.css";
@@ -16,6 +16,8 @@ name: "",
 lastName: "",
 email: "",
 password: "",
+confirmPassword: "",
+agreement: "not agree",
 });
 const changeHandler = e => {
 const { name, value } = e.target;
@@ -55,24 +57,42 @@ return(
                     helperText={formErrors.email} showError={submitted} required={true} changeHandler={changeHandler}
                     placeholder="example@xyz.com" />
 
-                <Input type="password" defaultValue={userInput.password} name="password" label="Password"
-                    helperText={formErrors.password} showError={submitted} required={true}
+                <PasswordInput defaultValue={userInput.password} name="password" label="Password"
+                    helperText={formErrors.password} showError={userInput.password.length> 2 || submitted}
+                    required={true}
                     changeHandler={changeHandler} />
 
-                <div className="agreement-options">
-                    <label className="form-label" htmlFor="agreement"><input type="checkbox" name="agreement" /> I agree to
-                        all Terms and Conditions</label>
-                </div>
+                    <Input type="password" defaultValue={userInput.confirmPassword} name="confirmPassword"
+                        label="Confirm Password" helperText={formErrors.confirmPassword}
+                        showError={userInput.confirmPassword.length> 2 || submitted} required={true}
+                    changeHandler={changeHandler} />
 
-                <div className="authentication-btn-cta">
-                    <button className="btn btn-primary block-btn submit-btn" onClick={e => formSubmitHandler(e)}>Create new account</button>
-                </div>
 
-                <div className="redirect-link text-center">
-                    <button className="btn link-btn link-cta">
-                        <Link to="/signin">Already have
-                        an account?<i className="fas fa-chevron-right"></i></Link></button>
-                </div>
+                    <div className="agreement-options">
+                        <label htmlFor="agreement">
+                            <input type="checkbox" name="agreement" onChange={changeHandler}
+                                value={userInput.agreement==="agree" ? "not agree" : "agree" }
+                                checked={userInput.agreement==="agree" } id="agreement" />
+                            I agree to all Terms & Conditions
+                        </label>
+
+                        {submitted && (
+                        <p className="text-danger text-xs text-center option-helper-txt">
+                            {formErrors.agreement}
+                        </p>
+                        )}
+                    </div>
+
+                    <div className="authentication-btn-cta">
+                        <button className="btn btn-primary block-btn submit-btn" onClick={e=>
+                            formSubmitHandler(e)}>Create new account</button>
+                    </div>
+
+                    <div className="redirect-link text-center">
+                        <button className="btn link-btn link-cta">
+                            <Link to="/signin">Already have
+                            an account?<i className="fas fa-chevron-right"></i></Link></button>
+                    </div>
             </form>
         </div>
 

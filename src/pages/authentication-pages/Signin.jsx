@@ -1,6 +1,6 @@
-import { Header, Footer, Input,Loader } from "../../components";
+import { Input, PasswordInput, Loader } from "../../components";
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect, useReducer } from "react";
+import { useState, useEffect} from "react";
 import { useAuth } from "../../context";
 import { validLoginFormChecker } from "../../utils";
 import "./authentication.css";
@@ -64,7 +64,7 @@ return(
 
 
 
-        <Input type="Email" required={true} label="password" placeholder="***********" defaultValue={userInput.password}
+        <PasswordInput required={true} label="password" placeholder="***********" defaultValue={userInput.password}
           changeHandler={changeHandler} showError={submitted} helperText={formErrors.password} />
 
 

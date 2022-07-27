@@ -23,6 +23,12 @@
     flex-wrap: wrap;
 }
 
+.option-helper-txt {
+    position: absolute;
+    top: 20px;
+}
+  
+
 /* btn styling */
 .authentication-btn-cta {
     display: flex;
