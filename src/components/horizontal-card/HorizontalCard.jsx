@@ -43,7 +43,7 @@ return(
         <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
     </Link>
     <div className="card-info-container">
-        <Link to={`/products/details/${id}`} className="card-info text-left">
+        <div className="card-info text-left">
             <div className="card-title">
                 <div>
                     <h3 className="card-title-header">{title}</h3>
@@ -54,7 +54,7 @@ return(
                 <p className="discount-price">₹{discountedPrice}</p>
                 <p className="actual-price">₹{price}</p>
             </div>
-        </Link>
+        </div>
         <div className="card-call-to-action">
         {cartItems.find(item => item._id === product._id) ? (
             <Link to="/cart" className="btn text-icon-btn btn-primary block-btn text-center">

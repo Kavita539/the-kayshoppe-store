@@ -23,7 +23,7 @@ return cartItems.find(item => item._id === product._id) ? (
 Go to cart
 </Link>
 ) : (
-<button className="btn text-icon-btn btn-primary block-btn" disabled={isFetching ? true : false} onClick={()=> (token ?
+<button className="btn text-icon-btn btn-primary block-btn card-cart-btn" disabled={isFetching ? true : false} onClick={()=> (token ?
     addToCart(product, setIsFetching) : navigation("/signin"))}
     >
     {!isFetching && (

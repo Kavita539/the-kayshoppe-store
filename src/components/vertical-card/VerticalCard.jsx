@@ -1,16 +1,17 @@
 import "./verticalCard.css";
 import { AddToCartButton } from "./AddToCartButton";
 import { AddToWishlistButton } from "./AddToWishlistButton";
+import { Link } from "react-router-dom";
 
 const VerticalCard = ({product}) => {
-const { _id,image, title, brandDescription, price, discountedPrice, rating } = product;
+const { id, image, title, brandDescription, price, discountedPrice, rating } = product;
 
 
 return(
 <div className="card vertical-card">
-    <div className="card-image-container">
+    <Link to={`/products/details/${id}`} className="card-image-container">
         <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
-    </div>
+    </Link>
     <div className="vertical-card-info-container">
         <div className="card-info">
             <div className="card-title">
