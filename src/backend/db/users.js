@@ -15,5 +15,16 @@ export const users = [
     password: "kayyshopper",
     createdAt: formatDate(),
     updatedAt: formatDate(),
+    address: [
+      {
+        _id: uuid(),
+        name: "Kayy Sharma",
+        mobile: "9111111111",
+        zipCode: "400000",
+        street: "244 / Madhani Estate, Ghodbandar Road, Thane, Mumbai",
+        state: "Maharashtra",
+        country: "India",
+      },
+    ],
   },
 ];
