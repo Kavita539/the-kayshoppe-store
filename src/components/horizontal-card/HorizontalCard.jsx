@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const HorizontalCard = ({product}) => {
 const {
-_id,
+id,
 title,
 featuredProductDescription,
 price,
@@ -39,9 +39,9 @@ return(
 <div className="card horizontal-card card-shadow">
 {error && <div>{error}</div>}
     <span className="card-badge">New</span>
-    <div className="card-image-container">
+    <Link to={`/products/details/${id}`} className="card-image-container">
         <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
-    </div>
+    </Link>
     <div className="card-info-container">
         <div className="card-info text-left">
             <div className="card-title">

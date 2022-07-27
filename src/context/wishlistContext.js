@@ -11,6 +11,7 @@ import {
 import {
     useAuth
 } from "./authContext";
+import toast from "react-hot-toast";
 
 const wishlistContext = createContext();
 
@@ -73,10 +74,12 @@ const WishlistProvider = ({
                     payload: res.data.wishlist
                 });
                 setIsFetching(false);
+                toast.success("Product added in wishlist");
             }
         } catch (err) {
             console.log(err.message);
             setIsFetching(false);
+            toast.error("Something went wrong,Please try again");
         }
     };
 
@@ -93,9 +96,11 @@ const WishlistProvider = ({
                     type: "SET_WISHLIST",
                     payload: res.data.wishlist
                 });
+                toast.success("Product removed from wishlist");
             }
         } catch (err) {
             console.log(err);
+            toast.error("Something went wrong,Please try again");
         }
     };
 

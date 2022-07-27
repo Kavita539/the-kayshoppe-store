@@ -31,6 +31,31 @@
     width: 100%;
 }
 
-.vertical-card:hover{
+.vertical-card:hover {
     box-shadow: var(--card-shadow);
+}
+
+.card-heart-logo .flex-total-center {
+    gap: var(--md-space);
+}
+
+.card-wishlist-btn {
+    opacity: 1;
+    z-index: 2;
+    box-shadow: var(--box-shadow-btn);
+}
+
+.card-cart-btn {
+    opacity: 1;
+    z-index: 2;
+    box-shadow: var(--box-shadow-btn);
+}
+
+.card-info-container {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.position-unset {
+    position: unset;
 }

@@ -13,6 +13,7 @@ import {
 import {
     actionTypes
 } from "../reducers/actionTypes";
+import toast from "react-hot-toast";
 
 const {
     LOGIN_USER,
@@ -24,6 +25,7 @@ const useAuth = () => useContext(authContext);
 
 const initialState = {
     userName: JSON.parse(localStorage.getItem("jwt"))?.userName || "",
+    email: JSON.parse(localStorage.getItem("jwt"))?.email || "",
     token: JSON.parse(localStorage.getItem("jwt"))?.token || "",
   };
 
@@ -43,7 +45,7 @@ const AuthProvider = ({
                 setLoader(false);
 
                 const {
-                    firstName
+                    firstName, email
                 } = res.data.createdUser;
                 const {
                     encodedToken
@@ -51,17 +53,19 @@ const AuthProvider = ({
 
                 localStorage.setItem("jwt", JSON.stringify({
                     userName: firstName,
-                    token: encodedToken
+                    token: encodedToken,
+                    email: email
                 }));
 
                 dispatch({
                     type: LOGIN_USER,
                     payload: {
                         userName: firstName,
-                        token: encodedToken
+                        token: encodedToken,
+                        email: email
                     },
                 });
-
+                toast.success(`Hi! ${firstName}`, { icon: "👋" });
                 navigate("/");
             }
         } catch (err) {
@@ -79,24 +83,27 @@ const AuthProvider = ({
                 setLoader(false);
 
                 const {
-                    firstName
+                    firstName,
+                    email
                 } = res.data.foundUser;
                 const {
                     encodedToken
                 } = res.data;
                 localStorage.setItem("jwt", JSON.stringify({
                     userName: firstName,
-                    token: encodedToken
+                    token: encodedToken,
+                    email: email
                 }));
 
                 dispatch({
                     type: LOGIN_USER,
                     payload: {
                         userName: firstName,
-                        token: encodedToken
+                        token: encodedToken,
+                        email: email
                     },
                 });
-
+                toast.success(`Hi! ${firstName}`, { icon: "👋" });
                 navigate(from, {
                     replace: true
                 });
@@ -113,6 +120,7 @@ const AuthProvider = ({
         });
         navigate("/");
         localStorage.removeItem("jwt");
+        toast.success("User LoggedOut!");
     };
 
     return ( <authContext.Provider value = {
