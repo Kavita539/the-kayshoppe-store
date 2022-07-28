@@ -3,8 +3,6 @@ import { Modal } from "../modal/Modal";
 import { Input } from "../input/Input";
 import { validAddressFormChecker } from "../../utils";
 import { useAddress } from "../../context";
-import toast from "react-hot-toast";
-import { toastStyle } from "../../utils/toaststyle";
 
 const defaultValue = { name: "", mobile: "", zipCode: "", street: "", state: "", country: "" };
 
@@ -43,10 +41,7 @@ addNewAddress(userInput);
 setIsModalOpen(false);
 setUserInput(initialAddress);
 setSubmitted(false);
-toast.success('You have successfully added the new address')
 }
-}else {
-    toast.error('You need to fill in the form details', toastStyle)
 }
 };
 

@@ -20,7 +20,6 @@ import {
 import {
     actionTypes
 } from "../reducers/actionTypes";
-import toast from "react-hot-toast";
 
 const {
     INITIALIZE,
@@ -96,7 +95,6 @@ const AddressProvider = ({
                 type: SET_ERROR,
                 error: err.response.data[0].errors
             });
-            toast.error('You need to fill the form');
         }
     };
 
@@ -122,7 +120,6 @@ const AddressProvider = ({
                 type: SET_ERROR,
                 error: err.response.data[0].errors
             });
-            toast.error('You need to fill the form');
         }
     };
 
@@ -147,8 +144,7 @@ const AddressProvider = ({
             addressDispatch({
                 type: SET_ERROR,
                 error: err.response.data[0].errors
-            });
-            
+            });   
         }
     };
 
