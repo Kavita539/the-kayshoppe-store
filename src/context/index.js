@@ -28,3 +28,8 @@ export {
     WishlistProvider
 }
 from "./wishlistContext";
+export {
+    AddressProvider,
+    useAddress
+}
+from "./addressContext";

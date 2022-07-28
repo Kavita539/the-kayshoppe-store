@@ -17,6 +17,9 @@ const actionTypes = {
     LOGIN_USER: "LOGI_USER",
     LOGOUT_USER: "LOGOUT_USER",
     SET_CART: "SET_CART",
+    SET_ERROR: "SET_ERROR",
+    INITIALIZE: "INITIALIZE",
+    SET_ADDRESS: "SET_ADDRESS",
 }
 
 export {

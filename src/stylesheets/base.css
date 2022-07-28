@@ -10,6 +10,9 @@ body {
   --bg-color: #fafafa;
   --nav-logo-custom-color: rgba(0, 0, 0, 0.6);
   --rating-star-color: hsl(42, 100%, 62%);
+  --primary-border: 2px solid var(--primary-color);
+  --secondary-border: 2px solid var(--secondary-color);
+  --modal-bg-color: hsla(0, 0%, 0%, 0.4);
 
 
   /* spacing */
@@ -36,6 +39,10 @@ body {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+.no-style-list {
+  list-style: none;
 }
 
 @media only screen and (max-width: 1000px){
