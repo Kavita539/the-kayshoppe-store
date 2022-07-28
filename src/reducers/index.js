@@ -14,3 +14,13 @@ export {
     wishlistReducer
 }
 from "./wishlistReducer";
+export {
+    addressReducer,
+    initialState
+}
+from "./addressReducer";
+export {
+    orderInitialState,
+    orderReducer
+}
+from "./orderReducer";

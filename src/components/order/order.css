@@ -1,0 +1,7 @@
+.order-header{
+    color: var(--dark-text-color);
+}
+
+.order-title{
+    flex-direction: column;
+}

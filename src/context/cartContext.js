@@ -15,6 +15,7 @@ import {
 import {
     actionTypes
 } from "../reducers/actionTypes";
+import { clearCartService } from "../services/cart-services/clearCartService";
 import toast from "react-hot-toast";
 
 const {
@@ -144,6 +145,18 @@ const CartProvider = ({
         }
     };
 
+    const clearCart = async () => {
+        try {
+          const { status, data } = await clearCartService(token);
+    
+          if (status === 201) {
+            dispatch({ type: SET_CART, payload: data.cart });
+          }
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
     const moveItemFromCartToWishlist = (product, setIsFetching) => {
         wishedItems.find(item => item._id === product._id) ?
          toast(<span>Item is already present in wishlist</span>, {
@@ -160,7 +173,8 @@ const CartProvider = ({
                 addToCart,
                 changeQuantity,
                 removeFromCart,
-                moveItemFromCartToWishlist
+                moveItemFromCartToWishlist,
+                clearCart,
             }
         } > {
             children
