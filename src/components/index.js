@@ -54,3 +54,7 @@ export {
     Modal
 }
 from "./modal/Modal";
+export {
+    Order
+}
+from "./order/Order";

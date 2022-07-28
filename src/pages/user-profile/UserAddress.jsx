@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AddressModal, AddressCard, Loader } from "../../components";
 import { useAddress } from "../../context";
 import { ProfileListOptions } from "./ProfileList";
+import "./profile.css";
 
 const UserAddress = () => {
 const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,7 +29,7 @@ return (
 
             {isLoading &&
             <Loader />}
-
+             {!address.length && !isLoading && <h3 className="text-center">No address available</h3>}
             {!isLoading &&
             address?.map(eachAddress =>
             <AddressCard key={eachAddress._id} address={eachAddress} />)}

@@ -20,6 +20,7 @@ const actionTypes = {
     SET_ERROR: "SET_ERROR",
     INITIALIZE: "INITIALIZE",
     SET_ADDRESS: "SET_ADDRESS",
+    SET_ORDERS: "SET_ORDERS",
 }
 
 export {

@@ -1,5 +1,5 @@
 import {Routes, Route, Navigate} from "react-router-dom"
-import {Home, Products, Cart, Wishlist, Signin, Signup, Profile, SingleProduct, UserAddress} from "../pages"
+import {Home, Products, Cart, Wishlist, Signin, Signup, Profile, SingleProduct, UserAddress, UserOrders, Checkout} from "../pages"
 import { PrivateRoutes } from "./PrivateRoutes";
 import { useAuth } from "../context";
 
@@ -16,10 +16,12 @@ const NavigationRoutes = () => {
         <Route path="/wishlist" element={<PrivateRoutes element={Wishlist} />}/>
         <Route path="/user/profile" element={<PrivateRoutes element={Profile} />} />
         <Route path="/user/address" element={<PrivateRoutes element={UserAddress} />} />
+        <Route path="/user/orders" element={<PrivateRoutes element={UserOrders} />} />
         <Route
         path="/products/details/:productId"
         element={<PrivateRoutes element={SingleProduct} />}
        />
+       <Route path="/checkout" element={<Checkout />} />
         {!token ? (
         <>
           <Route path="/signin" element={<Signin />} />

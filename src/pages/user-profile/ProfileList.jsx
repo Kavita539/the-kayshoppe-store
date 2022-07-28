@@ -28,14 +28,6 @@ return (
             Orders
         </NavLink>
     </li>
-    <li className="profile-list-item flex-total-center">
-        <NavLink to="/user/settings" className={({ isActive })=>
-            isActive ? "profile-links profile-active-link" : "profile-links"
-            }
-            >
-            Settings
-        </NavLink>
-    </li>
 </ul>
 );
 };

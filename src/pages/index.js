@@ -6,4 +6,5 @@ export { Signin } from "./authentication-pages/Signin";
 export { Signup } from "./authentication-pages/Signup";
 export { Profile } from "./user-profile/Profile";
 export {SingleProduct} from "./single-product-page/SingleProduct";
-export {UserAddress} from "./user-profile";
+export {UserAddress, UserOrders} from "./user-profile";
+export { Checkout } from "./checkout/Checkout";

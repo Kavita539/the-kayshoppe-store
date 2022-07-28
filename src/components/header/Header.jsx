@@ -46,7 +46,6 @@ return(
                     : "display-none"
                     }
                     >
-                    0
                     {wishedItems.length}
                 </span>
             </span>

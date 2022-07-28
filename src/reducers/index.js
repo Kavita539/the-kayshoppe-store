@@ -19,3 +19,8 @@ export {
     initialState
 }
 from "./addressReducer";
+export {
+    orderInitialState,
+    orderReducer
+}
+from "./orderReducer";
