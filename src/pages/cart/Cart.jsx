@@ -2,7 +2,6 @@ import { CartCard } from "../../components";
 import "./cart.css"
 import { BillDistribution } from "./Billdustribution";
 import { useCart, useAddress  } from "../../context";
-import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const {
