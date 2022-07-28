@@ -78,7 +78,7 @@ return(
             </button>
           )}
           {wishedItems.find(item => item._id === product._id) ? (
-            <Link to="/wishlist" className="btn btn-outline-primary block-btn text-center">
+            <Link to="/wishlist" className="btn outline-btn-primary block-btn text-center">
             Go to Wishlist
             </Link>
             ) : (
