@@ -1,6 +1,6 @@
 import { useCart, useWishlist } from "../../context";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./cartCard.css"
 
 const CartCard = ({ product }) => {
@@ -8,13 +8,19 @@ const { id, _id, title, brandDescription, price, discountedPrice, qty, image } =
 const { changeQuantity, removeFromCart, moveItemFromCartToWishlist } = useCart();
 const [isFetching, setIsFetching] = useState(false);
 
+const navigate= useNavigate();
+
+const navigationHandler = () => {
+  navigate(`/products/details/${id}`);
+}
+
 return(
-<div className="card horizontal-card">
-  <Link to={`/products/details/${id}`} className="card-image-container">
+<div className="card horizontal-card" onClick={navigationHandler}>
+  <div className="card-image-container">
     <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
-  </Link>
+  </div>
   <div className="card-info-container">
-    <Link to={`/products/details/${id}`} className="card-info text-left">
+    <div className="card-info text-left">
       <div className="card-title">
         <div>
           <h3 className="card-title-header">{title}</h3>
@@ -35,7 +41,7 @@ return(
           +
         </button>
       </div>
-    </Link>
+    </div>
     <div className="card-call-to-action">
       <button className="btn outline-btn-primary block-btn" onClick={() => moveItemFromCartToWishlist(product, setIsFetching)}
             disabled={isFetching ? true : false}>Move to wishlist</button>

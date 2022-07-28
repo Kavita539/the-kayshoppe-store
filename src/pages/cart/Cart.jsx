@@ -1,13 +1,17 @@
 import { CartCard } from "../../components";
 import "./cart.css"
 import { BillDistribution } from "./Billdustribution";
+<<<<<<< Updated upstream
 import { useCart } from "../../context";
+=======
+import { useCart, useAddress  } from "../../context";
+import { useNavigate } from "react-router-dom";
+>>>>>>> Stashed changes
 
 const Cart = () => {
   const {
     state: { cartItems },
   } = useCart();
-
 
 
     return (
