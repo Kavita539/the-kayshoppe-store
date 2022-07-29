@@ -9,7 +9,6 @@ const Cart = () => {
   } = useCart();
 
 
-
     return (
       <>
       <div class="children-container">

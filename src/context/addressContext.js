@@ -140,7 +140,7 @@ const AddressProvider = ({
                     payload: data.address
                 });
             }
-        } catch (err) {
+            }catch (err) {
             addressDispatch({
                 type: SET_ERROR,
                 error: err.response.data[0].errors
