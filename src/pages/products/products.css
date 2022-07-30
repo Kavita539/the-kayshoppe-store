@@ -25,6 +25,7 @@
 
 .filters label {
     cursor: pointer;
+    color: var(--dark-text-color);
 }
 
 .filter-title {

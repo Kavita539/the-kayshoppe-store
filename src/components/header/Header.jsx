@@ -35,7 +35,7 @@ return(
     </div>
     <ul className="right-navbar">
         <li>
-            <Link to="/products" className="navlist-link-item display-none-link"> <button className="btn link-btn">Shop Now</button>
+            <Link to="/products" className="navlist-link-item display-none-link"> <button className="btn link-btn shop-now-btn">Shop Now</button>
             </Link>
         </li>
         <li>

@@ -1,6 +1,6 @@
-import { useCart, useWishlist } from "../../context";
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useCart } from "../../context";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./cartCard.css"
 
 const CartCard = ({ product }) => {
@@ -11,11 +11,11 @@ const [isFetching, setIsFetching] = useState(false);
 const navigate= useNavigate();
 
 const navigationHandler = () => {
-  navigate(`/products/details/${id}`);
+navigate(`/products/details/${id}`);
 }
 
 return(
-<div className="card horizontal-card" onClick={navigationHandler}>
+<div className="card horizontal-card cart-card" onClick={() => navigationHandler}>
   <div className="card-image-container">
     <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
   </div>
@@ -32,20 +32,29 @@ return(
         <p className="actual-price">₹ {price}</p>
       </div>
       <div className="quantity-div">
-        <button className="minus" disabled={qty===1 ? true : false} onClick={()=>
-          changeQuantity("decrement", _id)}>
+        <button className="minus" disabled={qty===1 ? true : false} onClick={(e)=>{
+          e.stopPropagation();
+          changeQuantity("decrement", _id)}}>
           -
         </button>
         <span className="qty-count">{qty}</span>
-        <button className="add" onClick={()=> changeQuantity("increment", _id)}>
+        <button className="add" onClick={(e)=> {
+          e.stopPropagation();
+          changeQuantity("increment", _id)
+          }}>
           +
         </button>
       </div>
     </div>
     <div className="card-call-to-action">
-      <button className="btn outline-btn-primary block-btn" onClick={() => moveItemFromCartToWishlist(product, setIsFetching)}
-            disabled={isFetching ? true : false}>Move to wishlist</button>
-      <button className="btn outline-btn-secondary block-btn" onClick={()=> removeFromCart(_id)}>
+      <button className="btn outline-btn-primary block-btn" onClick={(e)=> {
+        e.stopPropagation();
+        moveItemFromCartToWishlist(product,
+        setIsFetching)}}
+        disabled={isFetching ? true : false}>Move to wishlist</button>
+      <button className="btn outline-btn-secondary block-btn" onClick={(e)=> {
+        e.stopPropagation();
+        removeFromCart(_id)}}>
         Remove from cart
       </button>
     </div>

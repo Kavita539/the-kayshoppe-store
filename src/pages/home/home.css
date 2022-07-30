@@ -85,3 +85,7 @@
     margin: auto;
     padding: var(--xl-space);
 }
+
+.card-info {
+    color: var(--black);
+}

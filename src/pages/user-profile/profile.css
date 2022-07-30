@@ -132,12 +132,16 @@
     border: 2px solid var(--secondary-border);
 }
 
-.delete-btn:hover {
-    color: brown;
+.card-info {
+    display: flex;
+    grid-column-gap: var(--md-space);
+    column-gap: var(--md-space);
+    flex-wrap: wrap;
 }
 
-.input-grp {
-    margin: var(--md-space) 0;
+
+.delete-btn:hover {
+    color: brown;
 }
 
 .address-modal-cta {

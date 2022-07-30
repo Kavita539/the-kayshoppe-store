@@ -24,6 +24,10 @@ body {
   --xxxl-space: 3rem;
 }
 
+.btn {
+  box-shadow: var(--box-shadow-btn);
+}
+
 .grid-50-50 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

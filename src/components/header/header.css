@@ -72,6 +72,7 @@
     background-color: transparent;
     text-decoration: none;
     color: var(--primary-color);
+    box-shadow: none;
 }
 
 .logout-btn {
