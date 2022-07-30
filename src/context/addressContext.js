@@ -100,26 +100,15 @@ const AddressProvider = ({
 
     const editAddress = async address => {
         try {
-            addressDispatch({
-                type: INITIALIZE
-            });
-
-            const {
-                status,
-                data
-            } = await updateAddress(address, token);
-
-            if (status === 200) {
-                addressDispatch({
-                    type: SET_ADDRESS,
-                    payload: data.address
-                });
-            }
+          addressDispatch({ type: INITIALIZE });
+    
+          const { status, data } = await updateAddress(address, token);
+    
+          if (status === 200) {
+            addressDispatch({ type: SET_ADDRESS, payload: data.address });
+          }
         } catch (err) {
-            addressDispatch({
-                type: SET_ERROR,
-                error: err.response.data[0].errors
-            });
+          addressDispatch({ type: SET_ERROR, error: err.response.data[0].errors });
         }
     };
 

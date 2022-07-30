@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Modal } from "../modal/Modal";
 import { Input } from "../input/Input";
-import { validAddressFormChecker } from "../../utils";
+import { validAddressFormChecker, toastStyle } from "../../utils";
 import { useAddress } from "../../context";
+import toast from "react-hot-toast";
 
 const defaultValue = { name: "", mobile: "", zipCode: "", street: "", state: "", country: "" };
 
@@ -36,12 +37,16 @@ editAddress(userInput);
 setIsModalOpen(false);
 setUserInput(initialAddress);
 setSubmitted(false);
+toast.success('Address Edited', toastStyle);
 } else {
 addNewAddress(userInput);
 setIsModalOpen(false);
 setUserInput(initialAddress);
 setSubmitted(false);
+toast.success('Address added', toastStyle);
 }
+}else {
+    toast.error('please fill in the details', toastStyle);
 }
 };
 

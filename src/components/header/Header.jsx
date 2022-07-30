@@ -27,15 +27,9 @@ return(
         <div className="nav-logo-tagline custom-color">ITS KAYY TO SPLURGE!</div>
         </Link>
     </div>
-    <div className="mid-navbar">
-        <div className="nav-search-bar">
-            <button className="btn search-btn"><i className="fas fa-search"></i></button>
-            <input className="form-field" type="text" placeholder="search here..." />
-        </div>
-    </div>
     <ul className="right-navbar">
         <li>
-            <Link to="/products" className="navlist-link-item display-none-link"> <button className="btn link-btn">Shop Now</button>
+            <Link to="/products" className="navlist-link-item display-none-link"> <button className="btn link-btn shop-now-btn">Shop Now</button>
             </Link>
         </li>
         <li>

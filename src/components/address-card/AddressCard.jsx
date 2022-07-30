@@ -13,7 +13,7 @@ return (
     <AddressModal initialAddress={address} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}
         isUpdating={true} />
     <h3>{name}</h3>
-    <address className="card-content">
+    <address className="card-content card-info">
         <span>{street}</span>
         <span>{state}</span>
         <span>{country}</span>

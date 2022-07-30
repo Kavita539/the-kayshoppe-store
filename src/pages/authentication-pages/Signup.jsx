@@ -40,7 +40,6 @@ setFormErrors({});
 return(
 <>
     <div className="authentication-container">
-        <div className="form-div">
             <form className="form-grp">
                 <h3 className="text-center text-lg">SIGN UP</h3>
                 {loader &&
@@ -94,7 +93,6 @@ return(
                             an account?<i className="fas fa-chevron-right"></i></Link></button>
                     </div>
             </form>
-        </div>
 
     </div>
 </>

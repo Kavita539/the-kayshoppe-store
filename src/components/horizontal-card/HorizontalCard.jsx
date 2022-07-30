@@ -43,7 +43,7 @@ return(
         <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
     </Link>
     <div className="card-info-container">
-        <div className="card-info text-left">
+        <Link to={`/products/details/${id}`} className="card-info text-left text-black">
             <div className="card-title">
                 <div>
                     <h3 className="card-title-header">{title}</h3>
@@ -54,7 +54,7 @@ return(
                 <p className="discount-price">₹{discountedPrice}</p>
                 <p className="actual-price">₹{price}</p>
             </div>
-        </div>
+        </Link>
         <div className="card-call-to-action">
         {cartItems.find(item => item._id === product._id) ? (
             <Link to="/cart" className="btn text-icon-btn btn-primary block-btn text-center">
@@ -67,7 +67,7 @@ return(
             <button
               className="btn text-icon-btn btn-primary block-btn text-center"
               disabled={loader}
-              onClick={() =>
+              onClick={() => 
                 token ? addToCart(product, setLoader, setError) : navigation("/signin")
               }
             >
@@ -82,7 +82,8 @@ return(
             Go to Wishlist
             </Link>
             ) : (
-            <button className="btn outline-btn-primary block-btn"disabled={loader} onClick={()=> (token ?
+            <button className="btn outline-btn-primary block-btn"disabled={loader} onClick={()=> 
+              (token ?
                 addToWishlist(product, setLoader, setError) : navigation("/signin"))}
                 >
                 Move to wishlist

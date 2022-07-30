@@ -52,7 +52,6 @@ return(
 <>
 
   <div className="authentication-container">
-    <div className="form-div">
       <form className="form-grp">
         <h3 className="text-center text-lg">SIGN IN</h3>
         {loader &&
@@ -62,12 +61,8 @@ return(
         <Input type="Email" required={true} label="Email" placeholder="xyz@gmail.com" defaultValue={userInput.email}
           changeHandler={changeHandler} showError={submitted} helperText={formErrors.email} />
 
-
-
         <PasswordInput required={true} label="password" placeholder="***********" defaultValue={userInput.password}
           changeHandler={changeHandler} showError={submitted} helperText={formErrors.password} />
-
-
 
         <div className="agreement-options">
           <label className="form-label-agreement" htmlFor="agreement"><input type="checkbox" name="agreement" />
@@ -89,7 +84,6 @@ return(
             account<i className="fas fa-chevron-right"></i></Link></button>
         </div>
       </form>
-    </div>
 
   </div>
 </>

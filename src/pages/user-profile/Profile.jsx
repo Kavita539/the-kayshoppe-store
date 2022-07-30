@@ -15,11 +15,7 @@ return(
     <div className="profile">
     <ProfileListOptions />
         <div className="profile-info">
-            <div class="avatar avatar-lg">
-                <img className="responsive-img profile-img"
-                    src={'https://avatars.dicebear.com/api/initials/${userName}.svg'} alt="avatar-lg" />
-            </div>
-
+            <h3>User Information</h3>
             <div className="details">
                 <div className="info">
                     <span className="text-bold">Name</span>
