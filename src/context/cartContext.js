@@ -94,8 +94,9 @@ const CartProvider = ({
         }
     };
 
-    const changeQuantity = async (type, productId) => {
+    const changeQuantity = async (type, productId, setIsFetching) => {
         try {
+            setIsFetching(prevState => ({ ...prevState, counter: true }));
             const res = await axios.post(
                 `/api/user/cart/${productId}`, {
                     action: {
@@ -113,11 +114,13 @@ const CartProvider = ({
                     type: SET_CART,
                     payload: res.data.cart
                 });
+                setIsFetching(prevState => ({ ...prevState, counter: false }));
                 toast.success("Product quantity updated");
             }
         } catch (err) {
             console.log(err);
             toast.error("Something went wrong,Please try again");
+            setIsFetching(prevState => ({ ...prevState, counter: false }));
         }
     };
 

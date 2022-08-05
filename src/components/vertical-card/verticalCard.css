@@ -3,6 +3,16 @@
     padding: var(--sm-space);
 }
 
+.responsive-img {
+    width: 100%;
+    height: auto;
+}
+
+.product-img {
+    width: 222px;
+    height: 183px;
+}
+
 .card-heart-logo {
     padding-top: 10px;
 }

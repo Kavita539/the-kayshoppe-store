@@ -67,7 +67,7 @@
   }
   
   .horizontal-card .card-image-container {
-    width: 10rem;
+    width: 13.5rem;
   }
   
   .horizontal-card .card-image-container img {
@@ -79,6 +79,7 @@
     flex-direction: column;
     padding:0 var(--sm-space);
     width: 12rem;
+    flex-grow: 0;
   }
   
   .block-btn {
@@ -130,6 +131,10 @@
     margin: 0 5px;
   }
   
+  .card-call-to-action {
+    row-gap: 0.2rem;
+  }
+  
   @media only screen and (max-width: 600px){
     .main-container{
       width: 100%;
@@ -169,7 +174,7 @@
     }
   
     .horizontal-card .card-image-container {
-      width: 11rem;
+      width: 12rem;
     }
   
     .card-info-container {
