@@ -53,7 +53,7 @@ return(
 
   <div className="authentication-container">
       <form className="form-grp">
-        <h3 className="text-center text-lg">SIGN IN</h3>
+        <h3 className="text-center text-lg">LOG IN</h3>
         {loader &&
         <Loader />}
         {error && <p className="text-danger text-center">{error}</p>}

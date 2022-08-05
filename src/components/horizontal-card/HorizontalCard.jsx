@@ -1,6 +1,7 @@
 import { useCart, useAuth, useWishlist } from "../../context";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import "./horizontalCard.css";
 
 const HorizontalCard = ({product}) => {
 const {
@@ -40,7 +41,7 @@ return(
 {error && <div>{error}</div>}
     <span className="card-badge">New</span>
     <Link to={`/products/details/${id}`} className="card-image-container">
-        <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
+        <img className="responsive-img rounded-top-corner-img featured-product-img" src={image} alt="card-img" />
     </Link>
     <div className="card-info-container">
         <Link to={`/products/details/${id}`} className="card-info text-left text-black">

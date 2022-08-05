@@ -29,10 +29,11 @@ return (
 
             {isLoading &&
             <Loader />}
-             {!address.length && !isLoading && <h3 className="text-center">No address available</h3>}
+            {!address.length && !isLoading && <h3 className="text-center">No address available</h3>}
             {!isLoading &&
-            address?.map(eachAddress =>
-            <AddressCard key={eachAddress._id} address={eachAddress} />)}
+            address.map(eachAddress => (
+            <AddressCard key={eachAddress._id} address={eachAddress} />
+            ))}
         </div>
     </div>
 </main>

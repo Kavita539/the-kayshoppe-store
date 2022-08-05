@@ -95,9 +95,7 @@ export const addAddressHandler = function (schema, request) {
  * */
 
 export const removeAddressHandler = function (schema, request) {
-  console.log("Here");
   const userId = requiresAuth.call(this, request);
-  console.log(userId);
   try {
     if (!userId) {
       new Response(
@@ -146,7 +144,7 @@ export const removeAddressHandler = function (schema, request) {
  * send POST Request at /api/user/address/:addressId
  * */
 
-export const updateAddressHandler = function (schema, request) {
+ export const updateAddressHandler = function (schema, request) {
   const addressId = request.params.addressId;
   const userId = requiresAuth.call(this, request);
   try {

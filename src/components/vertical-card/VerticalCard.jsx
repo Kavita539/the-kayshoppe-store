@@ -10,7 +10,9 @@ const { id, image, title, brandDescription, price, discountedPrice, rating } = p
 return(
 <div className="card vertical-card">
     <Link to={`/products/details/${id}`} className="card-image-container">
-        <img className="responsive-img rounded-top-corner-img" src={image} alt="card-img" />
+        <img className="responsive-img rounded-top-corner-img product-img" src={image} alt="card-img" width="340"
+          height="270"
+          loading="lazy"/>
     </Link>
     <div className="vertical-card-info-container">
         <div className="card-info">
