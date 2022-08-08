@@ -22,7 +22,7 @@ return (
         <section className="address-cards">
             {address?.map(address => (
             <label key={address._id} className="address-radio">
-                <input type="checkbox" checked={selectedAddressId===address._id} onChange={()=>
+                <input type="radio" name="address" checked={selectedAddressId===address._id} onChange={()=>
                 setSelectedAddressId(address._id)}
                 />
                 <div>
