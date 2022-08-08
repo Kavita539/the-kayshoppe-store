@@ -1,7 +1,84 @@
-.order-header{
+.order-header {
     color: var(--dark-text-color);
 }
 
-.order-title{
+.order-title {
     flex-direction: column;
+}
+
+.card-order-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.order-card {
+    display: flex;
+    justify-content: space-between;
+    height: 18rem;
+    width: 25rem;
+}
+
+
+.order-card .card-image-container {
+    width: 13.5rem;
+}
+
+.order-card .card-image-container img {
+    height: 100%;
+}
+
+.card-info-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--sm-space);
+    width: 12rem;
+    flex-grow: 0;
+}
+
+.order-card .card-title-header {
+    font-size: 1rem;
+    padding: 0;
+}
+
+.card-description {
+    font-size: 0.8rem;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .order-card {
+        width: 16rem;
+        flex-direction: column;
+    }
+
+    .actual-price {
+        font-size: 0.9rem;
+    }
+
+    .order-card .card-title-header {
+        font-size: 0.9rem;
+    }
+
+    .card-paragraph {
+        font-size: 0.8rem;
+    }
+
+    .order-card .card-image-container {
+        width: 16rem;
+        height: 10rem;
+    }
+
+    .card-info-container {
+        padding: 0;
+        width: 10rem;
+    }
+
+    .order-info {
+        width: 16rem;
+    }
+
+
 }

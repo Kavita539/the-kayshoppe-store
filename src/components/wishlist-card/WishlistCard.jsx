@@ -1,5 +1,6 @@
 import { useWishlist } from "../../context";
 import { AddToCartButton } from "../vertical-card/AddToCartButton";
+import "./wishlistCard.css";
 
 
 const WishlistCard = ({product}) => {
@@ -11,10 +12,10 @@ const WishlistCard = ({product}) => {
         <div className="card">
                     <button className="card-close-btn" onClick={() => removeFromWishlist(_id)}><i className="fas fa-times fa-md"></i></button>
                     <div className="card-image-container">
-                        <img className="responsive-img rounded-top-corner-img" src={image}
+                        <img className="responsive-img rounded-top-corner-img wishlist-card-img" src={image}
                             alt="card-img" />
                     </div>
-                    <div className="card-info-container">
+                    <div className="vertical-card-info-container">
                         <div className="card-info">
                             <div className="card-title">
                                 <div>
@@ -28,7 +29,7 @@ const WishlistCard = ({product}) => {
                             </div>
                             <div className="rating text-semibold text-sm"><i className="fas fa-sm fa-star"></i>{rating}</div>
                         </div>
-                        <div className="card-call-to-action">
+                        <div className="vertical-card-call-to-action">
                         <AddToCartButton product={product} />
                         </div>
                     </div>

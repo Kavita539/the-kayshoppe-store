@@ -27,13 +27,14 @@ return (
             </address>
         </div>
     </div>
+    <div className="card-order-container">
     {orderedProducts.map(({ id, _id, image, title, detailedDescription, qty }) => (
-    <Link to={`/products/details/${id}`} key={_id} className="card horizontal-card">
+    <Link to={`/products/details/${id}`} key={_id} className="card order-card">
     <div className="card-image-container">
         <img className="responsive-img rounded-top-corner-img" src={image} alt={title} />
     </div>
     <div className="card-info-container">
-        <div className="card-info">
+        <div className="card-info order-info">
             <div className="card-title order-title">
                 <span className="text-bold card-header order-header">{title}</span>
                 <span className="card-paragraph text-gray">{detailedDescription}</span>
@@ -43,6 +44,7 @@ return (
     </div>
     </Link>
     ))}
+    </div>
 </div>
 );
 };

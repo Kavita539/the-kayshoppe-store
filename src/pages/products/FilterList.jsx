@@ -20,7 +20,7 @@ const FilterList = ({showFilters, setShowFilters}) => {
             <div className="filter-title">
                 <h5 className="filter-name">Filters</h5>
                 <button
-          className="btn link-btn primary-btn"
+          className="btn btn-primary"
           onClick={() =>
             dispatch({ type: CLEAR, payload: { min: priceRange.min, max: priceRange.max } })
           }

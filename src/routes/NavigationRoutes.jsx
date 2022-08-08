@@ -17,10 +17,7 @@ const NavigationRoutes = () => {
         <Route path="/user/profile" element={<PrivateRoutes element={Profile} />} />
         <Route path="/user/address" element={<PrivateRoutes element={UserAddress} />} />
         <Route path="/user/orders" element={<PrivateRoutes element={UserOrders} />} />
-        <Route
-        path="/products/details/:productId"
-        element={<PrivateRoutes element={SingleProduct} />}
-       />
+        <Route path="/products/details/:productId" element={<SingleProduct />} />
        <Route path="/checkout" element={<Checkout />} />
         {!token ? (
         <>

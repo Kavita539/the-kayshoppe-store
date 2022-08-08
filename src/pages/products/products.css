@@ -19,6 +19,10 @@
     overflow: hidden;
 }
 
+.clear-btn {
+    border-bottom: 2px solid var(--primary-color);
+}
+
 .filter-title-mobile {
     display: none;
 }
