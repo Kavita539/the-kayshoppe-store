@@ -102,8 +102,8 @@ const AddressProvider = ({
         try {
           addressDispatch({ type: INITIALIZE });
     
-          const { status, data } = await updateAddress(address, token);
-    
+          const { status, data } = await updateAddress(address, token); 
+
           if (status === 200) {
             addressDispatch({ type: SET_ADDRESS, payload: data.address });
           }

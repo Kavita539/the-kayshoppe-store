@@ -16,7 +16,6 @@ isUpdating,
 const [userInput, setUserInput] = useState(initialAddress);
 const [formErrors, setFormErrors] = useState({});
 const [submitted, setSubmitted] = useState(false);
-
 const { addNewAddress, editAddress } = useAddress();
 
 useEffect(() => {
