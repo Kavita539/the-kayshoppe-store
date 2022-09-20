@@ -164,7 +164,6 @@ export const removeAddressHandler = function (schema, request) {
     const {
       address: { name, mobile, zipCode, street, state, country },
     } = JSON.parse(request.requestBody);
-
     userAddress.forEach(address => {
       if (address._id === addressId) {
         address.name = name;
